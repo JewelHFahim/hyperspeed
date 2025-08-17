@@ -12,7 +12,7 @@ const Home = () => {
     <div>
       <HeroSlider />
 
-      <PartsSelector />
+      <PartsSelector title="Select Your Parts" description=""/>
 
       <CategorySection
         title="Wheels"

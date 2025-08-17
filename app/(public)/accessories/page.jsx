@@ -1,53 +1,21 @@
 "use client";
 
-import CustomUnderline from "@/components/common/CustomUnderline";
 import PartsSelector from "@/components/home/PartsSelector";
-import { useEffect, useState } from "react";
+import Breadcumb from "@/components/common/Breadcumb";
+import HeroSection from "@/components/common/HeroSection";
+import CustomUnderline from "@/components/common/CustomUnderline";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-function RimsPage() {
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    // Load the TireConnect widget script dynamically
-    const script = document.createElement("script");
-    script.src = "https://app.tireconnect.ca/js/widget.js";
-    script.async = true;
-    script.onload = () => {
-      if (window.TCWidget) {
-        window.TCWidget.init({
-          apikey: "a8a72a2c519972b3e6b8866d7fc9229d",
-          container: "tireconnect",
-        });
-        setIsLoading(false);
-      }
-    };
-    document.body.appendChild(script);
-  }, []);
+export default function AccessoriesPage() {
 
   return (
     <main className="min-h-screen bg-white text-black">
-      {/* 🔹 Hero Section */}
-      <section className="relative py-16 bg-black text-center text-white">
-        <motion.h1
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          className="text-4xl md:text-6xl font-extrabold"
-        >
-          Premium <span className="text-[var(--color-primary)]">Rims</span>
-        </motion.h1>
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.3 }}
-          className="mt-4 text-lg max-w-2xl mx-auto text-gray-300"
-        >
-          Style, performance, and durability in every wheel.
-        </motion.p>
-        <CustomUnderline />
-      </section>
+      {/* Breadcrumb */}
+      <Breadcumb title="Accessories"/>
+
+      {/* Hero Section */}
+      <HeroSection title="Car" colorTitle="Accessories" description="Enhance comfort, style, and performance with premium accessories."/>
 
       {/* Selection Widget */}
       <PartsSelector title="Find the Perfect Rims for Your Vehicle" />
@@ -55,20 +23,17 @@ function RimsPage() {
       {/* Categories Section */}
       <section className="bg-gray-50 py-16">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-2xl font-bold text-center mb-">
-            <span className="text-[var(--color-primary)]">Rim</span> Categories
-          </h2>
-
+          <h2 className="text-2xl font-bold text-center"> Explore Our Accessories </h2>
           <CustomUnderline className="my-6" />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { title: "Alloy Rims", img: "/images/g2.webp" },
-              { title: "Chrome Rims", img: "/images/rim1.jpg" },
-              { title: "Matte Black", img: "/images/rim1.jpg" },
-              { title: "Performance", img: "/images/rim1.jpg" },
-              { title: "Luxury", img: "/images/rim1.jpg" },
-              { title: "Off-Road", img: "/images/rim1.jpg" },
+              { title: "Floor Mats",},
+              { title: "Seat Covers",},
+              { title: "Lighting",},
+              { title: "Car Covers",},
+              { title: "Phone Mounts",},
+              { title: "Roof Racks",},
             ].map((cat, idx) => (
               <motion.div
                 key={idx}
@@ -94,18 +59,13 @@ function RimsPage() {
       {/* Informational Section */}
       <section className="max-w-7xl mx-auto py-20 px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div>
-          <h2 className="text-3xl font-bold mb-4">
-            Why <span className="text-[var(--color-primary)]"> Choose </span>
-            Our Rims?
-          </h2>
+          <h2 className="text-3xl font-bold mb-4">Why <span className="text-[var(--color-primary)]"> Choose </span> Our Accessories?</h2>
           <ul className="space-y-3 text-gray-700 leading-relaxed">
-            <li>✅ Engineered with top-grade alloys for maximum durability.</li>
-            <li>
-              ✅ Multiple finishes: matte, gloss, chrome, and custom paints.
-            </li>
-            <li>✅ Precision-designed for performance and safety.</li>
-            <li>✅ Lightweight construction for improved handling.</li>
-            <li>✅ Easy care and resistant to weather conditions.</li>
+            <li>✅ Designed to fit perfectly with your vehicle.</li>
+            <li>✅ Durable and made from high-quality materials.</li>
+            <li>✅ Enhance comfort, safety, and convenience.</li>
+            <li>✅ Wide range of options to suit every style.</li>
+            <li>✅ Affordable pricing with premium quality.</li>
           </ul>
         </div>
         <motion.div
@@ -116,8 +76,8 @@ function RimsPage() {
           className="relative w-full h-80 rounded-lg overflow-hidden"
         >
           <Image
-            src="/images/g2.webp"
-            alt="Rim Showcase"
+              src="/images/g2.webp"
+            alt="Accessories Showcase"
             fill
             className="object-cover"
           />
@@ -128,7 +88,7 @@ function RimsPage() {
       <section className="bg-[var(--color-primary)] text-white py-16">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8">
           <h3 className="text-2xl md:text-3xl font-bold text-center md:text-left">
-            Upgrade Your Vehicle’s Look Today
+            Upgrade Your Ride with Premium Accessories
           </h3>
           <motion.a
             href="/contact"
@@ -142,5 +102,3 @@ function RimsPage() {
     </main>
   );
 }
-
-export default RimsPage;

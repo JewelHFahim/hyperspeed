@@ -43,7 +43,7 @@ export default function PromosPage() {
           transition={{ duration: 0.7 }}
           className="text-4xl md:text-6xl font-extrabold"
         >
-          Current <span className="text-[#e60023]">Promotions</span>
+          Current <span className="text-[var(--color-primary)]">Promotions</span>
         </motion.h1>
         <motion.p
           initial={{ opacity: 0 }}
@@ -55,14 +55,14 @@ export default function PromosPage() {
           accessories.
         </motion.p>
         <div className="mt-6 flex justify-center">
-          <span className="w-24 h-1 bg-[#e60023] rounded-full"></span>
+          <span className="w-24 h-1 bg-[var(--color-primary)] rounded-full"></span>
         </div>
       </section>
 
       {/* 🔹 Active Promos */}
       <section className="px-6 py-20 max-w-7xl mx-auto">
         <h2 className="text-2xl font-bold mb-10 text-center">
-          Active <span className="text-[#e60023]">Deals</span>
+          Active <span className="text-[var(--color-primary)]">Deals</span>
         </h2>
         <div className="grid md:grid-cols-3 gap-8">
           {promos.map((promo, idx) => (
@@ -79,7 +79,7 @@ export default function PromosPage() {
                 className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-black/40 flex flex-col justify-end p-6 text-white">
-                <span className="text-xs bg-[#e60023] px-2 py-1 rounded w-fit mb-2">
+                <span className="text-xs bg-[var(--color-primary)] px-2 py-1 rounded w-fit mb-2">
                   {promo.tag}
                 </span>
                 <h3 className="text-xl font-bold">{promo.title}</h3>
@@ -105,7 +105,7 @@ export default function PromosPage() {
             transition={{ duration: 0.6 }}
             className="text-3xl md:text-5xl font-extrabold mb-4"
           >
-            Exclusive Online <span className="text-[#e60023]">Offer</span>
+            Exclusive Online <span className="text-[var(--color-primary)]">Offer</span>
           </motion.h2>
           <p className="max-w-xl mb-6">
             Get free installation on all wheel purchases this week. Don’t miss
@@ -113,7 +113,7 @@ export default function PromosPage() {
           </p>
           <Link
             href="/parts"
-            className="bg-[#e60023] px-6 py-3 rounded-md font-semibold hover:bg-white hover:text-black transition"
+            className="bg-[var(--color-primary)] px-6 py-3 rounded-md font-semibold hover:bg-white hover:text-black transition"
           >
             Shop Now
           </Link>
@@ -123,7 +123,7 @@ export default function PromosPage() {
       {/* 🔹 Past Promos */}
       <section className="px-6 py-20 max-w-7xl mx-auto">
         <h2 className="text-2xl font-bold mb-10 text-center">
-          Past <span className="text-[#e60023]">Promotions</span>
+          Past <span className="text-[var(--color-primary)]">Promotions</span>
         </h2>
         <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
           {pastPromos.map((promo, idx) => (
@@ -148,7 +148,7 @@ export default function PromosPage() {
       </section>
 
       {/* 🔹 Call to Action */}
-      <section className="bg-[#e60023] text-white py-16 text-center">
+      <section className="bg-[var(--color-primary)] text-white py-16 text-center">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

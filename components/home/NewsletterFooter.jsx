@@ -12,7 +12,7 @@ import { motion } from "framer-motion";
       className="relative overflow-hidden"
     >
       {/* Animated Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-primary)] via-[#e60023] to-black animate-gradient-x"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-primary)] via-[var(--color-primary)] to-black animate-gradient-x"></div>
 
       {/* Noise Overlay */}
       <div className="absolute inset-0 bg-[url('/noise.png')] opacity-10 pointer-events-none"></div>

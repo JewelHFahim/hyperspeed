@@ -26,7 +26,7 @@ export default function GalleryPage() {
           transition={{ duration: 0.7 }}
           className="text-4xl md:text-6xl font-extrabold"
         >
-          Our <span className="text-[#e60023]">Gallery</span>
+          Our <span className="text-[var(--color-primary)]">Gallery</span>
         </motion.h1>
         <motion.p
           initial={{ opacity: 0 }}
@@ -38,7 +38,7 @@ export default function GalleryPage() {
           performance and style.
         </motion.p>
         <div className="mt-6 flex justify-center">
-          <span className="w-24 h-1 bg-[#e60023] rounded-full"></span>
+          <span className="w-24 h-1 bg-[var(--color-primary)] rounded-full"></span>
         </div>
       </section>
 
@@ -78,7 +78,7 @@ export default function GalleryPage() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl font-bold mb-4">
-              Premium <span className="text-[#e60023]">Quality</span>
+              Premium <span className="text-[var(--color-primary)]">Quality</span>
             </h2>
             <p className="text-gray-600 leading-relaxed">
               Every product in our collection is carefully selected for its
@@ -106,7 +106,7 @@ export default function GalleryPage() {
       {/* 🔹 Extended Gallery */}
       <section className="px-6 py-20 max-w-7xl mx-auto">
         <h2 className="text-2xl font-bold mb-10 text-center">
-          More <span className="text-[#e60023]">Inspiration</span>
+          More <span className="text-[var(--color-primary)]">Inspiration</span>
         </h2>
         <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
           {galleryImages.concat(galleryImages).map((img, idx) => (
@@ -128,7 +128,7 @@ export default function GalleryPage() {
       </section>
 
       {/* 🔹 Call to Action */}
-      <section className="bg-[#e60023] text-white py-16 text-center">
+      <section className="bg-[var(--color-primary)] text-white py-16 text-center">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

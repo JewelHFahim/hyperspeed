@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Container from "@/components/layout/Container";
 import { FaCogs } from "react-icons/fa";
 
-export default function PartsSelector() {
+export default function PartsSelector({title, description}) {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -30,7 +30,7 @@ export default function PartsSelector() {
         {/* Header */}
         <div className="flex items-center gap-3 bg-[#8B0000] text-white px-6 py-3 rounded-t-xl">
           <FaCogs className="text-xl" />
-          <h2 className="text-lg md:text-xl font-semibold">Select Your Parts</h2>
+          <h2 className="text-lg md:text-xl font-semibold">{title}</h2>
         </div>
 
         {/* Widget Container */}

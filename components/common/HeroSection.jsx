@@ -1,15 +1,16 @@
 import React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const HeroSection = ({title, colorTitle, description }) => {
   return (
     <section className="relative h-[50vh] flex items-center justify-center bg-black text-white">
-      {/* <Image
-              src="/images/accessories-hero.jpg"
+      <Image
+              src="/images/slider3.jpg"
               alt="Car Accessories"
               fill
               className="object-cover opacity-40"
-            /> */}
+            />
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
@@ -17,7 +18,7 @@ const HeroSection = ({title, colorTitle, description }) => {
         className="relative z-10 text-center"
       >
          <h1 className="text-4xl md:text-6xl font-extrabold uppercase tracking-wider">
-            {title} <span className="text-[var(--color-primary)]"> {colorTitle} </span>
+            {title} <span className="text-[#e60023]"> {colorTitle} </span>
          </h1>
          
         <p className="mt-3 text-lg text-gray-200">

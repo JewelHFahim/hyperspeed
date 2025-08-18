@@ -36,7 +36,7 @@ function RimsPage() {
           transition={{ duration: 0.7 }}
           className="text-4xl md:text-6xl font-extrabold"
         >
-          Premium <span className="text-[var(--color-primary)]">Rims</span>
+          Premium <span className="text-[#e60023]">Rims</span>
         </motion.h1>
         <motion.p
           initial={{ opacity: 0 }}
@@ -56,7 +56,7 @@ function RimsPage() {
       <section className="bg-gray-50 py-16">
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-2xl font-bold text-center mb-">
-            <span className="text-[var(--color-primary)]">Rim</span> Categories
+            <span className="text-[#e60023]">Rim</span> Categories
           </h2>
 
           <CustomUnderline className="my-6" />
@@ -95,7 +95,7 @@ function RimsPage() {
       <section className="max-w-7xl mx-auto py-20 px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div>
           <h2 className="text-3xl font-bold mb-4">
-            Why <span className="text-[var(--color-primary)]"> Choose </span>
+            Why <span className="text-[#e60023]"> Choose </span>
             Our Rims?
           </h2>
           <ul className="space-y-3 text-gray-700 leading-relaxed">
@@ -125,7 +125,7 @@ function RimsPage() {
       </section>
 
       {/* CTA Banner */}
-      <section className="bg-[var(--color-primary)] text-white py-16">
+      <section className="bg-[#e60023] text-white py-16">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8">
           <h3 className="text-2xl md:text-3xl font-bold text-center md:text-left">
             Upgrade Your Vehicle’s Look Today

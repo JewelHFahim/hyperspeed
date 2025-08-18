@@ -1,4 +1,3 @@
-// components/layout/MainNavbar.tsx
 "use client";
 
 import { FaCog, FaBars, FaTimes } from "react-icons/fa";
@@ -26,7 +25,7 @@ const navLinks = [
     name: "Financing",
     href: "/financing",
     submenu: [
-      { name: "Apply for Financing", href: "/financing/apply" },
+      { name: "AMPI Winter Tire Program", href: "mpi-winter-tire-program" },
       { name: "Payment Calculator", href: "/financing/calculator" },
     ],
   },

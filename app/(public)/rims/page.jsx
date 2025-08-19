@@ -1,6 +1,7 @@
 "use client";
 
 import CustomUnderline from "@/components/common/CustomUnderline";
+import HeroSection from "@/components/common/HeroSection";
 import PartsSelector from "@/components/home/PartsSelector";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
@@ -29,25 +30,7 @@ function RimsPage() {
   return (
     <main className="min-h-screen bg-white text-black">
       {/* 🔹 Hero Section */}
-      <section className="relative py-16 bg-black text-center text-white">
-        <motion.h1
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          className="text-4xl md:text-6xl font-extrabold"
-        >
-          Premium <span className="text-[#e60023]">Rims</span>
-        </motion.h1>
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.3 }}
-          className="mt-4 text-lg max-w-2xl mx-auto text-gray-300"
-        >
-          Style, performance, and durability in every wheel.
-        </motion.p>
-        <CustomUnderline />
-      </section>
+      <HeroSection title="Premium" colorTitle="Rims" description="Style, performance and durability in every wheel."/>
 
       {/* Selection Widget */}
       <PartsSelector title="Find the Perfect Rims for Your Vehicle" />

@@ -1,7 +1,8 @@
 "use client";
 
 import { FaSnowflake, FaCar, FaShieldAlt } from "react-icons/fa";
-import Breadcumb from "@/components/common/Breadcumb";
+import Container from "@/components/layout/Container";
+import HeroSection from "@/components/common/HeroSection";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -9,13 +10,15 @@ import Link from "next/link";
 export default function MpiWinterTireProgramPage() {
 
   return (
-    <main className="min-h-screen bg-black text-white">
-      {/* Breadcrumb */}
-      <Breadcumb title="MPI Winter Tire Program"/>
+    <main className="min-h-screen">
+
+      <HeroSection title="AMPI Winter" colorTitle="Tire Program" description=" Eligible Manitobans can finance winter tires and installation at low interest through Hyper Speed Performance. Don’t miss out—see if you qualify!"/>
+
 
       {/* Hero split section */}
-      <section className="relative bg-gradient-to-r from-[#e60023] via-[#a5001a] to-black">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-8 px-6 py-16">
+      <section className="relative bg-gray-100 bg-gradient-to-r from-[#e60023 ] via-[#a5001a ] to-blac k">
+        <Container>
+        <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8 px-6 py-16">
           {/* Text side */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -24,17 +27,17 @@ export default function MpiWinterTireProgramPage() {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <h1 className="text-4xl md:text-5xl font-bold leading-tight">
-              MPI Winter Tire Program
+            <h1 className="text-4xl md:text-5xl font-bold leading-tight text-black">
+              MPI Winter <span className="text-[var(--color-primary)]">Tire Program</span>
             </h1>
-            <p className="text-lg text-gray-100 leading-relaxed">
+            <p className="text-lg text-black leading-relaxed">
               Eligible Manitobans can finance winter tires and installation at
               low interest through Hyper Speed Performance. Don’t miss out—see
               if you qualify!
             </p>
             <Link
               href="#eligibility"
-              className="inline-block bg-white text-black font-semibold px-6 py-3 rounded-md hover:bg-gray-200 transition-colors"
+              className="inline-block bg-[var(--color-primary)] text-white font-semibold px-6 py-3 rounded-md hover:bg-gray-black transition-colors"
             >
               Check Your Eligibility
             </Link>
@@ -49,7 +52,7 @@ export default function MpiWinterTireProgramPage() {
             className="flex justify-center"
           >
             <Image
-              src="/images/mpi-winter-tires.jpg" // <- Add this image in public/images
+              src="/images/g3.webp" // <- Add this image in public/images
               alt="Winter tires"
               width={500}
               height={400}
@@ -57,12 +60,13 @@ export default function MpiWinterTireProgramPage() {
             />
           </motion.div>
         </div>
+        </Container>
       </section>
 
       {/* Benefits section */}
-      <section className="py-16 px-6 bg-black">
+      <section className="py-16 px-6 bg-blac k">
         <div className="max-w-7xl mx-auto text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-black">
             Why Choose MPI Winter Tire Program?
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
@@ -110,7 +114,7 @@ export default function MpiWinterTireProgramPage() {
       {/* Eligibility Section */}
       <section
         id="eligibility"
-        className="py-16 px-6 bg-gradient-to-b from-gray-900 to-black"
+        className="mt-12 py-16 px-6 bg-[var(--color-primary)]"
       >
         <div className="max-w-4xl mx-auto text-center">
           <motion.h2

@@ -26,7 +26,7 @@ const navLinks = [
     href: "/financing",
     submenu: [
       { name: "AMPI Winter Tire Program", href: "mpi-winter-tire-program" },
-      { name: "Payment Calculator", href: "/financing/calculator" },
+      { name: "Equal Payment Plan", href: "equal-payment-plan" },
     ],
   },
   {

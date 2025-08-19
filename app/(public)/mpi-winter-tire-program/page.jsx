@@ -18,7 +18,7 @@ export default function MpiWinterTireProgramPage() {
       {/* Hero split section */}
       <section className="relative bg-gray-100 bg-gradient-to-r from-[#e60023 ] via-[#a5001a ] to-blac k">
         <Container>
-        <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8 px-6 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8 py-16">
           {/* Text side */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -140,7 +140,7 @@ export default function MpiWinterTireProgramPage() {
             href="/contact"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-[#e60023] px-8 py-3 rounded-md font-medium hover:bg-red-700 transition-colors"
+            className="bg-black px-8 py-3 rounded-md font-medium hover:bg-white hover:text-black transition-colors"
           >
             Get Started
           </motion.a>

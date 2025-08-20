@@ -28,7 +28,7 @@ export default function PartsSelector({title, description}) {
     <section className="bg-gray-50 py-12">
       <Container>
         {/* Header */}
-        <div className="flex items-center gap-3 bg-[#8B0000] text-white px-6 py-3 rounded-t-xl">
+        <div className="flex items-center gap-3 bg-[var(--color-primary)] text-white px-6 py-3 rounded-t-xl">
           <FaCogs className="text-xl" />
           <h2 className="text-lg md:text-xl font-semibold">{title}</h2>
         </div>
@@ -37,7 +37,7 @@ export default function PartsSelector({title, description}) {
         <div className="bg-white rounded-b-xl shadow-lg overflow-hidden p-4">
           {isLoading && (
             <div className="flex items-center justify-center h-[500px]">
-              <div className="animate-spin rounded-full h-10 w-10 border-t-2 border-b-2 border-[#8B0000]"></div>
+              <div className="animate-spin rounded-full h-10 w-10 border-t-2 border-b-2 border-[var(--color-primary)]"></div>
             </div>
           )}
           <div

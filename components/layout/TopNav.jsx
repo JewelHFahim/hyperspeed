@@ -12,7 +12,7 @@ import Link from "next/link";
 
 export default function TopNav() {
   return (
-    <div className="hidden lg:block bg-[#8B0000] text-white text-sm">
+    <div className="hidden lg:block bg-[var(--color-primary)] text-white text-sm">
       <Container>
         <div className="flex justify-between items-center py-2">
           {/* Left Side */}

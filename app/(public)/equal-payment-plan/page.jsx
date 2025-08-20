@@ -1,236 +1,281 @@
-// app/(public)/financial/equal-payment-plan/page.tsx
-
 "use client";
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
 import {
-  FaWallet,
-  FaRegCalendarAlt,
+  FaRegMoneyBillAlt,
+  FaTools,
+  FaCarAlt,
   FaClipboardCheck,
-  FaShoppingCart,
-  FaRegClock,
   FaUniversity,
   FaRegEnvelope,
   FaMapMarkerAlt,
 } from "react-icons/fa";
+import Link from "next/link";
+import HeroSection from "@/components/common/HeroSection";
+import Container from "@/components/layout/Container";
+import CustomUnderline from "@/components/common/CustomUnderline";
 
 export default function EqualPaymentPlanPage() {
   return (
-    <main className="min-h-screen bg-black text-white">
+    <main className="min-h-screen bg-white text-black">
+      <HeroSection
+        title=" Equal Payment Plan for Your Car"
+        colorTitle="Services and Parts"
+        description=" Keep your car running smoothly and your wallet happy with flexible financing options."
+      />
 
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-[#e60023] via-[#a5001a] to-black">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-8 px-6 py-16">
-          {/* Text */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="space-y-6"
-          >
-            <h1 className="text-4xl md:text-5xl font-bold leading-tight">
-              Equal Payment Plan
-            </h1>
-            <p className="text-lg text-gray-100 leading-relaxed">
-              Buy now, pay later with Fairstone. Enjoy the products you want
-              today and pay over time with flexible financing options, both
-              in-store and online.
-            </p>
-            <Link
-              href="#apply"
-              className="inline-block bg-white text-black font-semibold px-6 py-3 rounded-md hover:bg-gray-200 transition-colors"
-            >
-              Start Your Application
-            </Link>
-          </motion.div>
-
-          {/* Image */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="flex justify-center"
-          >
-            <Image
-              src="/images/finance-hero.jpg" // <-- Add finance-related image in public/images
-              alt="Equal Payment Plan"
-              width={500}
-              height={400}
-              className="rounded-lg shadow-lg object-cover"
-            />
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Relaxed Financing Section */}
-      <section className="py-16 px-6 bg-black">
-        <div className="max-w-5xl mx-auto text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Relaxed Financing
-          </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            Shop stress-free with flexible payment options. Break down your
-            purchase into easy monthly payments with Fairstone.
-          </p>
-        </div>
-
-        {/* Plans Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
-          {[
-            {
-              title: "3 Month",
-              desc: "No interest if paid in full within 3 months. Min. $149.99 purchase.",
-              fee: "No fee",
-            },
-            {
-              title: "6 Month",
-              desc: "No interest if paid in full within 6 months. Min. $289.99 purchase.",
-              fee: "$29.99 admin fee",
-            },
-            {
-              title: "12 Month",
-              desc: "No interest if paid in full within 12 months. Min. $389.99 purchase.",
-              fee: "$69.99 admin fee",
-            },
-            {
-              title: "18 Month",
-              desc: "Low interest. Min. $599.99 purchase.",
-              fee: "$99.99 admin fee",
-            },
-          ].map((plan, idx) => (
+      {/* Hero split section */}
+      <section className="relative bg-gray-100">
+        <Container>
+          <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8 py-16">
+            {/* Text side */}
             <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: idx * 0.2, duration: 0.6 }}
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="bg-gray-900 rounded-xl p-6 text-center hover:scale-105 transition-transform shadow-lg"
+              className="space-y-6"
             >
-              <FaRegCalendarAlt
-                size={40}
-                className="text-[#e60023] mx-auto mb-4"
+              <h1 className="text-4xl md:text-5xl font-bold leading-tight text-black">
+                Buy now, pay later with{" "}
+                <span className="text-[var(--color-primary)]"> Fairstone </span>
+              </h1>
+              <p className="text-lg text-black leading-relaxed">
+                Enjoy the products you want today and pay over time with
+                flexible financing options, both in-store and online.
+              </p>
+              <Link
+                href="#eligibility"
+                className="inline-block bg-[var(--color-primary)] text-white font-semibold px-6 py-3 rounded-md hover:bg-gray-black transition-colors"
+              >
+                Apply NOw
+              </Link>
+            </motion.div>
+
+            {/* Image side */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="flex justify-center"
+            >
+              <Image
+                src="/images/g3.webp"
+                alt="Winter tires"
+                width={500}
+                height={400}
+                className="rounded-lg shadow-lg object-cover"
               />
-              <h3 className="text-xl font-semibold mb-2">{plan.title}</h3>
-              <p className="text-gray-400 text-sm mb-2">{plan.desc}</p>
-              <p className="text-gray-300 font-medium">{plan.fee}</p>
             </motion.div>
-          ))}
-        </div>
+          </div>
+        </Container>
       </section>
 
-      {/* How it works Section */}
-      <section className="py-16 px-6 bg-gradient-to-b from-gray-900 to-black">
-        <div className="max-w-5xl mx-auto text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Here's how it works
-          </h2>
-        </div>
+      {/* Equal Payment Plan Options */}
+      <Container>
+        <section className="py-16 my-10 bg-white text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl font-semibold text-black mb-6">
+              Choose Your Equal Payment Plan
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {[
+                {
+                  title: "3 Months",
+                  desc: "No interest if paid in full within 3 months. Min. $149.99 purchase.",
+                  fee: "No fee",
+                },
+                {
+                  title: "6 Months",
+                  desc: "No interest if paid in full within 6 months. Min. $289.99 purchase.",
+                  fee: "$29.99 admin fee",
+                },
+                {
+                  title: "12 Months",
+                  desc: "No interest if paid in full within 12 months. Min. $389.99 purchase.",
+                  fee: "$69.99 admin fee",
+                },
+                {
+                  title: "18 Months",
+                  desc: "Low interest. Min. $599.99 purchase.",
+                  fee: "$99.99 admin fee",
+                },
+              ].map((plan, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: idx * 0.2, duration: 0.6 }}
+                  viewport={{ once: true }}
+                  className="bg-[#f8f8f8] p-6 rounded-lg shadow-lg hover:scale-105 transition-transform"
+                >
+                  <FaClipboardCheck
+                    size={40}
+                    className="text-[var(--color-primary)] mx-auto mb-4"
+                  />
+                  <h3 className="text-xl font-semibold text-black mb-2">
+                    {plan.title}
+                  </h3>
+                  <p className="text-gray-600">{plan.desc}</p>
+                  <p className="text-gray-500 font-medium">{plan.fee}</p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </section>
+      </Container>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-7xl mx-auto">
-          {[
-            {
-              icon: <FaClipboardCheck size={40} />,
-              title: "1. Apply",
-              desc: "Complete a simple form and get instant results.",
-            },
-            {
-              icon: <FaWallet size={40} />,
-              title: "2. Choose",
-              desc: "Pick Best Buy Financing at checkout.",
-            },
-            {
-              icon: <FaShoppingCart size={40} />,
-              title: "3. Checkout",
-              desc: "Select your plan and place the order.",
-            },
-            {
-              icon: <FaRegClock size={40} />,
-              title: "4. Pay Later",
-              desc: "Enjoy your purchase and pay later over time.",
-            },
-          ].map((step, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: idx * 0.2, duration: 0.6 }}
-              viewport={{ once: true }}
-              className="bg-gray-900 rounded-xl p-6 text-center hover:scale-105 transition-transform"
-            >
-              <div className="text-[#e60023] mb-4 flex justify-center">
-                {step.icon}
-              </div>
-              <h3 className="text-lg font-semibold mb-2">{step.title}</h3>
-              <p className="text-gray-400">{step.desc}</p>
-            </motion.div>
-          ))}
-        </div>
+      {/* How It Works */}
+      <section className="py-20 bg-gray-50">
+        <Container>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center"
+          >
+            <h2 className="text-3xl font-semibold text-black mb-6">
+              How It Works
+            </h2>
+
+            <CustomUnderline className="mb-7"/>
+
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+              {[
+                {
+                  icon: <FaClipboardCheck size={40} />,
+                  title: "1. Apply",
+                  desc: "Fill out a simple form and get instant results.",
+                },
+                {
+                  icon: <FaRegMoneyBillAlt size={40} />,
+                  title: "2. Choose",
+                  desc: "Select your financing plan at checkout.",
+                },
+                {
+                  icon: <FaCarAlt size={40} />,
+                  title: "3. Service",
+                  desc: "Get your car serviced or purchase parts.",
+                },
+                {
+                  icon: <FaTools size={40} />,
+                  title: "4. Pay Later",
+                  desc: "Enjoy your purchase and pay later over time.",
+                },
+              ].map((step, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: idx * 0.2, duration: 0.6 }}
+                  viewport={{ once: true }}
+                  className="bg-[#f8f8f8] p-6 rounded-lg shadow-lg hover:scale-105 transition-transform"
+                >
+                  <div className="text-[var(--color-primary)] mb-4">{step.icon}</div>
+                  <h3 className="text-lg font-semibold text-black mb-2">
+                    {step.title}
+                  </h3>
+                  <p className="text-gray-600">{step.desc}</p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </Container>
       </section>
 
-      {/* Three Ways to Pay */}
-      <section className="py-16 px-6 bg-black">
-        <div className="max-w-5xl mx-auto text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+      {/* Three Easy Ways to Pay */}
+      <section className="py-16 px-6 bg-white">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="max-w-6xl mx-auto text-center"
+        >
+          <h2 className="text-3xl font-semibold text-black mb-6">
             Three Easy Ways to Pay
           </h2>
-          <p className="text-gray-400">
-            Choose the payment option that suits you best.
-          </p>
-        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
-          {[
-            {
-              icon: <FaUniversity size={40} />,
-              title: "Online Banking",
-              desc: "Use your bank’s platform to make payments.",
-            },
-            {
-              icon: <FaRegEnvelope size={40} />,
-              title: "Mailed Cheques",
-              desc: "Mail to 630 René-Lévesque Blvd. West, Suite 1400, Montréal, QC.",
-            },
-            {
-              icon: <FaMapMarkerAlt size={40} />,
-              title: "Visit a Branch",
-              desc: "Pay at your nearest Fairstone branch.",
-            },
-          ].map((method, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: idx * 0.2, duration: 0.6 }}
-              viewport={{ once: true }}
-              className="bg-gray-900 rounded-xl p-6 text-center hover:scale-105 transition-transform"
-            >
-              <div className="text-[#e60023] mb-4 flex justify-center">
-                {method.icon}
-              </div>
-              <h3 className="text-lg font-semibold mb-2">{method.title}</h3>
-              <p className="text-gray-400">{method.desc}</p>
-            </motion.div>
-          ))}
-        </div>
+          <p className="text-gray-600 mb-8">
+            Choose the option that suits you best.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                icon: <FaUniversity size={40} />,
+                title: "Online Banking",
+                desc: "Use your financial institution’s platform to make payments.",
+              },
+              {
+                icon: <FaRegEnvelope size={40} />,
+                title: "Mailed Cheques",
+                desc: "Mail to 630 René-Lévesque Blvd. West, Suite 1400, Montréal, QC, H3B 1S6",
+              },
+              {
+                icon: <FaMapMarkerAlt size={40} />,
+                title: "At a Fairstone Branch",
+                desc: "Visit a local branch using the locator tool.",
+              },
+            ].map((method, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: idx * 0.2, duration: 0.6 }}
+                viewport={{ once: true }}
+                className="bg-[#f8f8f8] p-6 rounded-lg shadow-lg hover:scale-105 transition-transform"
+              >
+                <div className="text-[var(--color-primary)] mb-4">{method.icon}</div>
+                <h3 className="text-lg font-semibold text-black mb-2">
+                  {method.title}
+                </h3>
+                <p className="text-gray-600">{method.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
       </section>
 
-      {/* Final CTA */}
-      <section
-        id="apply"
-        className="py-16 px-6 bg-gradient-to-r from-[#e60023] via-[#a5001a] to-black text-center"
-      >
+      {/* Disclaimers Section */}
+      <section className="py-8 px-6 bg-white text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="max-w-6xl mx-auto"
+        >
+          <p className="text-gray-500 text-sm">
+            <strong>
+              ¹ Minimum payment of 1% of your balance will be due each billing
+              cycle.
+            </strong>
+          </p>
+          <p className="text-gray-500 text-sm mt-2">
+            Admin fees and interest may apply based on plan type. Approvals
+            subject to credit checks by Fairstone Financial Inc.
+          </p>
+        </motion.div>
+      </section>
+
+      {/* Final Call-to-Action */}
+      <section id="apply" className="py-16 px-6 bg-[var(--color-primary)] text-center">
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-3xl md:text-4xl font-bold mb-6"
+          className="text-3xl md:text-4xl font-semibold mb-6 text-white"
         >
-          Apply for Best Buy Financing Today
+          Apply for Financing Today
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -239,26 +284,17 @@ export default function EqualPaymentPlanPage() {
           viewport={{ once: true }}
           className="text-gray-200 max-w-2xl mx-auto mb-8"
         >
-          Find out if you’re approved in just a few minutes and enjoy flexible,
-          stress-free financing with Fairstone.
+          Get approved in just a few minutes and enjoy stress-free car servicing
+          and part purchases with easy financing.
         </motion.p>
         <motion.a
           href="/contact"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="bg-white text-black font-semibold px-8 py-3 rounded-md hover:bg-gray-200 transition-colors"
+          className="bg-black text-white font-semibold px-8 py-3 rounded-md hover:bg-white hover:text-black transition-colors"
         >
           Start Your Application
         </motion.a>
-      </section>
-
-      {/* Disclaimer */}
-      <section className="py-10 px-6 bg-black text-gray-500 text-sm max-w-5xl mx-auto">
-        <p>
-          ¹ Minimum payment of 1% of your balance will be due each billing
-          cycle. Admin fees and interest may apply based on plan type. Approvals
-          subject to credit checks by Fairstone Financial Inc.
-        </p>
       </section>
     </main>
   );

@@ -5,14 +5,18 @@ import Container from "../layout/Container";
 const CategorySection = ({ title, icon, filters, products, seeMoreHref }) => {
   return (
     <section className="bg-white py-12">
-      <Container>
-        <section className="w-full bg-white">
-          {/* Header */}
-          <div className="flex items-center gap-3 mb-2 py-2 border-b border-gray-200">
-            <Image src={icon} width={35} height={35} alt=""/>
+      {/* Header */}
+      <div className="bg-gray-50">
+        <Container>
+          <div className="flex items-center gap-3 mb-4 py-3  ">
+            <Image src={icon} width={35} height={35} alt="" />
             <h2 className="text-2xl text-gray-700">{title}</h2>
           </div>
+        </Container>
+      </div>
 
+      <Container>
+        <section className="w-full bg-white">
           {/* Filters */}
           <div className="hidden md:flex flex-wrap gap-2 mb-6">
             {filters.map((filter, i) => (
@@ -45,8 +49,6 @@ const CategorySection = ({ title, icon, filters, products, seeMoreHref }) => {
                 </div>
               </div>
             ))}
-
-  
           </div>
         </section>
       </Container>

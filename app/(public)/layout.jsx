@@ -4,11 +4,11 @@ import MainNavbar from "@/components/layout/MainNavbar";
 import Footer from "@/components/layout/Footer";
 import "../globals.css";
 
-// const oxygen = Oxygen({
-//   variable: "--font-oxygen",
-//   subsets: ["latin"],
-//   weight: ["400", "700"],
-// });
+const oxygen = Oxygen({
+  variable: "--font-oxygen",
+  subsets: ["latin"],
+  weight: ["400", "700"],
+});
 
 export const metadata = {
   title: "Create Next App",
@@ -17,7 +17,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en"  className={oxygen.className}>
       <body>
         <TopNav />
         <MainNavbar />

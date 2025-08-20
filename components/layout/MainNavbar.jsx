@@ -33,9 +33,9 @@ const navLinks = [
     name: "Services",
     href: "/services",
     submenu: [
-      { name: "Car Servicing", href: "/services/car-servicing" },
-      { name: "Wheel Alignment", href: "/services/wheel-alignment" },
-      { name: "Tire Installation", href: "/services/tire-installation" },
+      { name: "Manitoba Safety Inspection", href: "manitoba-safety-inspection" },
+      { name: "Wheel Mounting & Balancing", href: "wheel-mounting-balancing" },
+      { name: "Wheel Alignment", href: "wheel-alignment" },
     ],
   },
   { name: "Promos", href: "/promos" },
@@ -49,7 +49,7 @@ export default function MainNavbar() {
   const [hoveredMenu, setHoveredMenu] = useState(null);
 
   return (
-    <div className="bg-[#8B0000] md:bg-white shadow-sm relative">
+    <div className="bg-[var(--color-primary)] md:bg-white shadow-sm relative">
       <Container>
         <div className="flex justify-between items-center py-3">
           {/* Left - Logo */}
@@ -77,10 +77,10 @@ export default function MainNavbar() {
               >
                 <Link
                   href={link.href}
-                  className="relative text-black font-medium transition-colors duration-300 hover:text-[#8B0000]"
+                  className="relative text-black font-medium transition-colors duration-300 hover:text-[var(--color-primary)]"
                 >
                   {link.name}
-                  <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#8B0000] transition-all duration-300 ease-out hover:w-full"></span>
+                  <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[var(--color-primary)] transition-all duration-300 ease-out hover:w-full"></span>
                 </Link>
 
                 <AnimatePresence>
@@ -96,7 +96,7 @@ export default function MainNavbar() {
                         <Link
                           key={sub.name}
                           href={sub.href}
-                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#8B0000] transition-colors"
+                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[var(--color-primary)] transition-colors"
                         >
                           {sub.name}
                         </Link>
@@ -113,7 +113,7 @@ export default function MainNavbar() {
           <div className="hidden md:block">
             <Link
               href="/wheel-visualizer"
-              className="flex items-center gap-2 bg-[#8B0000] text-white px-4 py-2 rounded-md border-2 border-[#8B0000] transition-all duration-300 hover:bg-white hover:text-[#8B0000]"
+              className="flex items-center gap-2 bg-[var(--color-primary)] text-white px-4 py-2 rounded-md border-2 border-[var(--color-primary)] transition-all duration-300 hover:bg-white hover:text-[var(--color-primary)]"
             >
               <FaCog className="text-lg animate-spin-slow" />
               <span className="font-semibold">Wheel Visualizer</span>
@@ -168,7 +168,7 @@ export default function MainNavbar() {
                           setMobileOpen(false);
                         }
                       }}
-                      className="w-full flex justify-between items-center px-4 py-3 text-gray-800 font-medium hover:text-[#8B0000] transition-colors"
+                      className="w-full flex justify-between items-center px-4 py-3 text-gray-800 font-medium hover:text-[var(--color-primary)] transition-colors"
                     >
                       <span>{link.name}</span>
                       {hasSubmenu && (
@@ -197,7 +197,7 @@ export default function MainNavbar() {
                               key={sub.name}
                               href={sub.href}
                               onClick={() => setMobileOpen(false)}
-                              className="text-sm text-gray-600 hover:text-[#8B0000] transition-colors"
+                              className="text-sm text-gray-600 hover:text-[var(--color-primary)] transition-colors"
                             >
                               {sub.name}
                             </Link>
@@ -214,7 +214,7 @@ export default function MainNavbar() {
                 <Link
                   href="/wheel-visualizer"
                   onClick={() => setMobileOpen(false)}
-                  className="flex items-center gap-2 bg-[#8B0000] text-white px-4 py-2 rounded-md border-2 border-[#8B0000] transition-all duration-300 hover:bg-white hover:text-[#8B0000] w-full justify-center"
+                  className="flex items-center gap-2 bg-[var(--color-primary)] text-white px-4 py-2 rounded-md border-2 border-[var(--color-primary)] transition-all duration-300 hover:bg-white hover:text-[var(--color-primary)] w-full justify-center"
                 >
                   <FaCog className="text-lg animate-spin-slow" />
                   <span className="font-semibold">Wheel Visualizer</span>

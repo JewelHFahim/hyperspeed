@@ -63,14 +63,14 @@ export default function AnimatedWheelMenu() {
         >
           <Link
             href={link.href}
-            className="relative text-black font-medium transition-colors duration-300 group-hover:text-[#8B0000]"
+            className="relative text-black font-medium transition-colors duration-300 group-hover:text-[var(--color-primary)]"
           >
             {link.name}
           </Link>
 
           {/* Track Line */}
           <span
-            className={`absolute bottom-0 left-0 h-[2px] w-full bg-[#8B0000] opacity-0 group-hover:opacity-50 transition-opacity duration-300`}
+            className={`absolute bottom-0 left-0 h-[2px] w-full bg-[var(--color-primary)] opacity-0 group-hover:opacity-50 transition-opacity duration-300`}
             style={{ filter: "blur(1.5px)" }}
           />
 
@@ -82,7 +82,7 @@ export default function AnimatedWheelMenu() {
                 animate={controls}
                 initial={{ x: -30, opacity: 0 }}
                 exit={{ opacity: 0 }}
-                className="absolute bottom-[2px] left-0 w-6 h-6 text-[#8B0000]"
+                className="absolute bottom-[2px] left-0 w-6 h-6 text-[var(--color-primary)]"
               >
                 <FaCog className="w-6 h-6 animate-spin-slow" />
               </motion.div>

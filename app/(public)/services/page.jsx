@@ -53,7 +53,7 @@ export default function ServicePage() {
               transition={{ duration: 0.6 }}
               className="text-4xl md:text-5xl font-extrabold tracking-tight"
             >
-              Precision <span className="text-[#e60023]">Wheel Alignment</span>
+              Precision <span className="text-[var(--color-primary)]">Wheel Alignment</span>
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 16 }}
@@ -72,7 +72,7 @@ export default function ServicePage() {
             >
               <a
                 href="#appointment"
-                className="group inline-flex items-center gap-2 rounded-2xl bg-[#e60023] px-6 py-3 text-white font-semibold hover:bg-black transition-colors"
+                className="group inline-flex items-center gap-2 rounded-2xl bg-[var(--color-primary)] px-6 py-3 text-white font-semibold hover:bg-black transition-colors"
               >
                 Book an appointment <FiArrowRight className="transition-transform group-hover:translate-x-0.5" />
               </a>
@@ -101,7 +101,7 @@ export default function ServicePage() {
                   variants={item}
                   className="flex items-center gap-2 rounded-2xl bg-white/70 backdrop-blur border border-black/5 px-4 py-3 shadow-sm"
                 >
-                  <span className="grid h-9 w-9 place-items-center rounded-xl bg-[#e60023]/10 text-[#e60023]">{f.icon}</span>
+                  <span className="grid h-9 w-9 place-items-center rounded-xl bg-[var(--color-primary)]/10 text-[var(--color-primary)]">{f.icon}</span>
                   <span className="font-medium">{f.text}</span>
                 </motion.li>
               ))}
@@ -123,7 +123,7 @@ export default function ServicePage() {
                 priority
               />
               <div className="absolute bottom-3 left-3 flex items-center gap-2 rounded-xl bg-white/85 backdrop-blur px-3 py-2 text-sm shadow">
-                <PiSteeringWheel className="text-[#e60023]" /> Laser-calibrated equipment
+                <PiSteeringWheel className="text-[var(--color-primary)]" /> Laser-calibrated equipment
               </div>
             </div>
           </motion.div>
@@ -170,7 +170,7 @@ export default function ServicePage() {
             viewport={{ once: true }}
             className="rounded-3xl border border-black/5 bg-white/80 backdrop-blur p-6 shadow-xl"
           >
-            <h3 className="flex items-center gap-2 text-xl font-semibold"><FiTool className="text-[#e60023]" /> Solutions</h3>
+            <h3 className="flex items-center gap-2 text-xl font-semibold"><FiTool className="text-[var(--color-primary)]" /> Solutions</h3>
             <ul className="mt-4 space-y-3">
               {[
                 { t: "Front or 4‑wheel alignment", d: "Set camber, toe, caster to OEM spec." },
@@ -181,7 +181,7 @@ export default function ServicePage() {
                 { t: "Custom fitment", d: "Specs for lifted/lowered or track setups." },
               ].map((s, i) => (
                 <li key={i} className="flex items-start gap-3">
-                  <span className="mt-1 grid h-6 w-6 place-items-center rounded-md bg-[#e60023]/10 text-[#e60023]"><FiCheckCircle /></span>
+                  <span className="mt-1 grid h-6 w-6 place-items-center rounded-md bg-[var(--color-primary)]/10 text-[var(--color-primary)]"><FiCheckCircle /></span>
                   <span>
                     <span className="font-semibold">{s.t}:</span> {s.d}
                   </span>
@@ -225,7 +225,7 @@ export default function ServicePage() {
 
       {/* Appointment section */}
       <section id="appointment" className="max-w-7xl mx-auto px-6 py-14">
-        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-black to-[#e60023] text-white p-6 md:p-8 shadow-xl">
+        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-black to-[var(--color-primary)] text-white p-6 md:p-8 shadow-xl">
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
             <div className="lg:col-span-2">
               <h2 className="text-3xl font-bold">Book your alignment</h2>

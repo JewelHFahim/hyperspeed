@@ -78,7 +78,7 @@ export default function ContactPage() {
               variants={item}
               className="group flex items-center gap-2 rounded-2xl bg-white/70 backdrop-blur border border-black/5 px-4 py-3 shadow-sm hover:shadow-md transition-shadow"
             >
-              <span className="grid place-items-center h-8 w-8 rounded-xl bg-[#e60023]/10 text-[#e60023] group-hover:scale-110 transition-transform">{pill.icon}</span>
+              <span className="grid place-items-center h-8 w-8 rounded-xl bg-[var(--color-primary)]/10 text-[var(--color-primary)] group-hover:scale-110 transition-transform">{pill.icon}</span>
               <span className="font-medium text-sm md:text-base">{pill.label}</span>
             </motion.li>
           ))}
@@ -107,7 +107,7 @@ export default function ContactPage() {
 
           <div className="rounded-3xl border border-black/5 bg-white/80 backdrop-blur shadow-xl">
             <div className="flex items-center gap-3 p-6 border-b border-black/5">
-              <div className="h-10 w-10 grid place-items-center rounded-xl bg-[#e60023] text-white">
+              <div className="h-10 w-10 grid place-items-center rounded-xl bg-[var(--color-primary)] text-white">
                 <FiMessageSquare />
               </div>
               <div>
@@ -127,7 +127,7 @@ export default function ContactPage() {
                     id="name"
                     type="text"
                     placeholder="Alex Morgan"
-                    className="w-full pl-10 border border-gray-300 px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#e60023] transition bg-white"
+                    className="w-full pl-10 border border-gray-300 px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] transition bg-white"
                     required
                   />
                 </div>
@@ -143,7 +143,7 @@ export default function ContactPage() {
                     id="email"
                     type="email"
                     placeholder="you@example.com"
-                    className="w-full pl-10 border border-gray-300 px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#e60023] transition bg-white"
+                    className="w-full pl-10 border border-gray-300 px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] transition bg-white"
                     required
                   />
                 </div>
@@ -159,7 +159,7 @@ export default function ContactPage() {
                     id="phone"
                     type="tel"
                     placeholder="+1 (416) 555-0199"
-                    className="w-full pl-10 border border-gray-300 px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#e60023] transition bg-white"
+                    className="w-full pl-10 border border-gray-300 px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] transition bg-white"
                   />
                 </div>
               </div>
@@ -172,7 +172,7 @@ export default function ContactPage() {
                   id="subject"
                   type="text"
                   placeholder="Wheel fitment for 2021 Civic"
-                  className="w-full border border-gray-300 px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#e60023] transition bg-white"
+                  className="w-full border border-gray-300 px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] transition bg-white"
                 />
               </div>
 
@@ -184,7 +184,7 @@ export default function ContactPage() {
                   id="order"
                   type="text"
                   placeholder="AWC-12345"
-                  className="w-full border border-gray-300 px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#e60023] transition bg-white"
+                  className="w-full border border-gray-300 px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] transition bg-white"
                 />
               </div>
 
@@ -194,7 +194,7 @@ export default function ContactPage() {
                 </label>
                 <select
                   id="service"
-                  className="w-full border border-gray-300 px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#e60023] transition bg-white"
+                  className="w-full border border-gray-300 px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] transition bg-white"
                   defaultValue="fitment"
                 >
                   <option value="fitment">Fitment advice</option>
@@ -213,7 +213,7 @@ export default function ContactPage() {
                   id="message"
                   rows={5}
                   placeholder="Tell us about your vehicle, driving style, and what you’re looking for."
-                  className="w-full border border-gray-300 px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#e60023] transition bg-white"
+                  className="w-full border border-gray-300 px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] transition bg-white"
                 />
               </div>
 
@@ -221,7 +221,7 @@ export default function ContactPage() {
                 <label className="block text-sm font-medium mb-1">Attach a photo (optional)</label>
                 <label
                   htmlFor="file"
-                  className="flex items-center gap-3 cursor-pointer rounded-xl border border-dashed border-gray-300 px-4 py-3 hover:border-[#e60023]/60 transition"
+                  className="flex items-center gap-3 cursor-pointer rounded-xl border border-dashed border-gray-300 px-4 py-3 hover:border-[var(--color-primary)]/60 transition"
                 >
                   <FiUpload />
                   <span className="text-sm text-gray-600">
@@ -242,7 +242,7 @@ export default function ContactPage() {
                 </label>
                 <select
                   id="preferred"
-                  className="w-full border border-gray-300 px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#e60023] transition bg-white"
+                  className="w-full border border-gray-300 px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] transition bg-white"
                   defaultValue="email"
                 >
                   <option value="email">Email</option>
@@ -267,10 +267,10 @@ export default function ContactPage() {
               <div className="sm:col-span-2 flex items-center gap-3 pt-2">
                 <button
                   type="submit"
-                  className="group relative inline-flex items-center justify-center gap-2 rounded-xl bg-[#e60023] px-6 py-3 font-semibold text-white transition-colors hover:bg-black"
+                  className="group relative inline-flex items-center justify-center gap-2 rounded-xl bg-[var(--color-primary)] px-6 py-3 font-semibold text-white transition-colors hover:bg-black"
                 >
                   <span>Send message</span>
-                  <span className="absolute inset-0 -z-10 rounded-xl bg-[#e60023]/40 blur-xl group-hover:opacity-0 transition-opacity" />
+                  <span className="absolute inset-0 -z-10 rounded-xl bg-[var(--color-primary)]/40 blur-xl group-hover:opacity-0 transition-opacity" />
                 </button>
                 <span className="text-sm text-gray-600">Average reply time: ~4 hours</span>
               </div>
@@ -331,7 +331,7 @@ export default function ContactPage() {
                 key={idx}
                 className="flex items-center gap-2 rounded-2xl bg-white/80 backdrop-blur border border-black/5 px-3 py-2 text-sm shadow-sm"
               >
-                <span className="text-[#e60023]">{b.icon}</span>
+                <span className="text-[var(--color-primary)]">{b.icon}</span>
                 <span className="font-medium">{b.label}</span>
               </div>
             ))}
@@ -360,7 +360,7 @@ export default function ContactPage() {
           initial={{ opacity: 0, scale: 0.98 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-black to-[#e60023] text-white p-6 md:p-8 shadow-xl"
+          className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-black to-[var(--color-primary)] text-white p-6 md:p-8 shadow-xl"
         >
           <div className="relative z-10">
             <h3 className="text-2xl md:text-3xl font-bold">
@@ -399,7 +399,7 @@ function InfoRow({
 }) {
   return (
     <div className="flex items-start gap-3">
-      <div className="mt-0.5 grid h-9 w-9 place-items-center rounded-xl bg-[#e60023]/10 text-[#e60023]">
+      <div className="mt-0.5 grid h-9 w-9 place-items-center rounded-xl bg-[var(--color-primary)]/10 text-[var(--color-primary)]">
         {icon}
       </div>
       <div>

@@ -14,7 +14,6 @@ export default function MpiWinterTireProgramPage() {
 
       <HeroSection title="AMPI Winter" colorTitle="Tire Program" description=" Eligible Manitobans can finance winter tires and installation at low interest through Hyper Speed Performance. Don’t miss out—see if you qualify!"/>
 
-
       {/* Hero split section */}
       <section className="relative bg-gray-100 bg-gradient-to-r from-[#e60023 ] via-[#a5001a ] to-blac k">
         <Container>
@@ -52,7 +51,7 @@ export default function MpiWinterTireProgramPage() {
             className="flex justify-center"
           >
             <Image
-              src="/images/g3.webp" // <- Add this image in public/images
+              src="/images/g3.webp"
               alt="Winter tires"
               width={500}
               height={400}
@@ -101,10 +100,10 @@ export default function MpiWinterTireProgramPage() {
               viewport={{ once: true }}
               className="bg-gray-900 rounded-xl p-6 text-center hover:scale-105 transition-transform"
             >
-              <div className="text-[#e60023] mb-4 flex justify-center">
+              <div className="text-[var(--color-primary)] mb-4 flex justify-center">
                 {item.icon}
               </div>
-              <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
+              <h3 className="text-xl font-semibold mb-2 text-white">{item.title}</h3>
               <p className="text-gray-400">{item.desc}</p>
             </motion.div>
           ))}
@@ -116,7 +115,7 @@ export default function MpiWinterTireProgramPage() {
         id="eligibility"
         className="mt-12 py-16 px-6 bg-[var(--color-primary)]"
       >
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-4xl mx-auto text-center bg-[var(--color-primary)]">
           <motion.h2
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -140,7 +139,7 @@ export default function MpiWinterTireProgramPage() {
             href="/contact"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-black px-8 py-3 rounded-md font-medium hover:bg-white hover:text-black transition-colors"
+            className="bg-black text-white px-8 py-3 rounded-md font-medium hover:bg-white hover:text-black transition-colors"
           >
             Get Started
           </motion.a>

@@ -6,6 +6,7 @@ import PartsSelector from "@/components/home/PartsSelector";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { GiCarWheel } from "react-icons/gi";
 
 function RimsPage() {
   const [isLoading, setIsLoading] = useState(true);
@@ -29,8 +30,12 @@ function RimsPage() {
 
   return (
     <main className="min-h-screen bg-white text-black">
-      {/* 🔹 Hero Section */}
-      <HeroSection title="Premium" colorTitle="Rims" description="Style, performance and durability in every wheel."/>
+      {/* Hero Section */}
+      <HeroSection
+        title="Premium"
+        colorTitle="Rims"
+        description="Style, performance and durability in every wheel."
+      />
 
       {/* Selection Widget */}
       <PartsSelector title="Find the Perfect Rims for Your Vehicle" />
@@ -39,7 +44,7 @@ function RimsPage() {
       <section className="bg-gray-50 py-16">
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-2xl font-bold text-center mb-">
-            <span className="text-[#e60023]">Rim</span> Categories
+            <span className="text-[var(--color-primary)]">Rim</span> Categories
           </h2>
 
           <CustomUnderline className="my-6" />
@@ -78,17 +83,23 @@ function RimsPage() {
       <section className="max-w-7xl mx-auto py-20 px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div>
           <h2 className="text-3xl font-bold mb-4">
-            Why <span className="text-[#e60023]"> Choose </span>
-            Our Rims?
+            Why Choose Our <span className="text-[var(--color-primary)]"> Rims?</span>
           </h2>
           <ul className="space-y-3 text-gray-700 leading-relaxed">
-            <li>✅ Engineered with top-grade alloys for maximum durability.</li>
-            <li>
-              ✅ Multiple finishes: matte, gloss, chrome, and custom paints.
+            <li className="flex items-center gap-2">
+              <GiCarWheel className="text-lg text-green-500"/>
+              Engineered with top-grade alloys for maximum durability.
             </li>
-            <li>✅ Precision-designed for performance and safety.</li>
-            <li>✅ Lightweight construction for improved handling.</li>
-            <li>✅ Easy care and resistant to weather conditions.</li>
+               <li className="flex items-center gap-2">
+              <GiCarWheel className="text-lg text-green-500"/>
+               Multiple finishes: matte, gloss, chrome, and custom paints.
+            </li>
+                <li className="flex items-center gap-2">
+              <GiCarWheel className="text-lg text-green-500"/> Precision-designed for performance and safety.</li>
+                <li className="flex items-center gap-2">
+              <GiCarWheel className="text-lg text-green-500"/> Lightweight construction for improved handling.</li>
+                <li className="flex items-center gap-2">
+              <GiCarWheel className="text-lg text-green-500"/> Easy care and resistant to weather conditions.</li>
           </ul>
         </div>
         <motion.div
@@ -108,7 +119,7 @@ function RimsPage() {
       </section>
 
       {/* CTA Banner */}
-      <section className="bg-[#e60023] text-white py-16">
+      <section className="bg-[var(--color-primary)] text-white py-16">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8">
           <h3 className="text-2xl md:text-3xl font-bold text-center md:text-left">
             Upgrade Your Vehicle’s Look Today

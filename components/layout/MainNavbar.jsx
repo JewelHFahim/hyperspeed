@@ -14,7 +14,7 @@ const navLinks = [
   },
   {
     name: "Wheels & Tires",
-    href: "/wheels-tires",
+    href: "",
     submenu: [
       { name: "Rims", href: "/rims" },
       { name: "Tires", href: "/tires" },
@@ -23,15 +23,15 @@ const navLinks = [
   },
   {
     name: "Financing",
-    href: "/financing",
+    href: "",
     submenu: [
-      { name: "AMPI Winter Tire Program", href: "mpi-winter-tire-program" },
+      { name: "MPI Winter Tire Program", href: "mpi-winter-tire-program" },
       { name: "Equal Payment Plan", href: "equal-payment-plan" },
     ],
   },
   {
     name: "Services",
-    href: "/services",
+    href: "",
     submenu: [
       { name: "Manitoba Safety Inspection", href: "manitoba-safety-inspection" },
       { name: "Wheel Mounting & Balancing", href: "wheel-mounting-balancing" },
@@ -90,7 +90,7 @@ export default function MainNavbar() {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
                       transition={{ duration: 0.2 }}
-                      className="absolute left-0 mt-2 bg-white shadow-lg rounded-md overflow-hidden z-50 min-w-[200px]"
+                      className="absolute left-0 mt-2 bg-white shadow-lg rounded-md overflow-hidden z-50 min-w-[200px] w-max"
                     >
                       {link.submenu.map((sub) => (
                         <Link

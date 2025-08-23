@@ -12,7 +12,7 @@ export default function MpiWinterTireProgramPage() {
   return (
     <main className="min-h-screen">
 
-      <HeroSection title="AMPI Winter" colorTitle="Tire Program" description=" Eligible Manitobans can finance winter tires and installation at low interest through Hyper Speed Performance. Don’t miss out—see if you qualify!"/>
+      <HeroSection title="MPI Winter" colorTitle="Tire Program" description=" Eligible Manitobans can finance winter tires and installation at low interest through Hyper Speed Performance. Don’t miss out—see if you qualify!"/>
 
       {/* Hero split section */}
       <section className="relative bg-gray-100 bg-gradient-to-r from-[#e60023 ] via-[#a5001a ] to-blac k">

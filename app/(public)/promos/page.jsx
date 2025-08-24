@@ -80,77 +80,6 @@ export default function PromosPage() {
         </div>
       </section>
 
-      {/* Parts Promos */}
-      <section className="max-w-7xl mx-auto px-6 pt-12">
-        <header className="mb-4 flex items-center justify-between gap-3">
-          <h2 className="text-2xl md:text-3xl font-bold">Parts Deals</h2>
-          <a
-            href="#parts"
-            className="group inline-flex items-center gap-2 text-[var(--color-primary)] font-semibold"
-          >
-            Shop parts{" "}
-            <FiShoppingCart className="transition-transform group-hover:translate-x-0.5" />
-          </a>
-        </header>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {[...Array(3)].map((_, idx) => (
-            <PartsCard
-              key={idx}
-              title="Tire Sets: Buy 3, Get 1 Free"
-              image="/images/g3.webp"
-              icon={<GiCarWheel />}
-              note="Installation extra"
-              perks={["Free rotation for 1 year", "Road‑hazard coverage"]}
-            />
-          ))}
-        </div>
-      </section>
-
-      {/* Bundles */}
-      <section className="max-w-7xl mx-auto px-6 pt-12">
-        <div className="rounded-3xl border border-black/5 bg-white/80 backdrop-blur p-6 shadow-xl">
-          <h2 className="text-2xl md:text-3xl font-bold">
-            Bundles & Save More
-          </h2>
-          <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
-            {bundles.map((b, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 12 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="rounded-2xl border border-black/5 bg-white p-5 shadow-sm"
-              >
-                <div className="flex items-center gap-2 text-sm text-gray-600">
-                  <FiTag /> {b.tag}
-                </div>
-                <h3 className="mt-1 text-lg font-semibold">{b.title}</h3>
-                <ul className="mt-2 space-y-1 text-sm text-gray-700">
-                  {b.items.map((it) => (
-                    <li key={it} className="flex items-center gap-2">
-                      <FiCheckCircle className="text-green-600" /> {it}
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-3 flex items-end justify-between">
-                  <span className="text-2xl font-extrabold">
-                    {b.price}
-                    <span className="text-base font-semibold ml-1">CAD</span>
-                  </span>
-                  <a
-                    href="#book"
-                    className="inline-flex items-center gap-2 rounded-xl bg-black text-white px-4 py-2"
-                  >
-                    Choose <FiChevronRight />
-                  </a>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Coupons */}
       <section className="max-w-7xl mx-auto px-6 pt-12">
         <div className="rounded-3xl border border-black/5 bg-white/80 backdrop-blur p-6 shadow-xl">
@@ -170,107 +99,8 @@ export default function PromosPage() {
         </div>
       </section>
 
-      {/* How to Redeem */}
-      <section className="max-w-7xl mx-auto px-6 py-12">
-        <div className="rounded-3xl border border-black/5 bg-white/80 backdrop-blur p-6 shadow-xl">
-          <h2 className="text-2xl md:text-3xl font-bold">How to redeem</h2>
-          <ol className="mt-3 grid grid-cols-1 md:grid-cols-4 gap-4">
-            {[
-              { t: "Book or shop", d: "Add service to cart or pick parts." },
-              {
-                t: "Apply coupon",
-                d: "Enter code at checkout or show at desk.",
-              },
-              { t: "Confirm time", d: "Pick a slot that works for you." },
-              { t: "Save", d: "We do the rest. Drive happy." },
-            ].map((s, i) => (
-              <li
-                key={i}
-                className="rounded-2xl border border-black/5 bg-white p-4 shadow-sm"
-              >
-                <div className="flex items-center gap-3">
-                  <span className="grid h-9 w-9 place-items-center rounded-xl bg-black/90 text-white">
-                    {i + 1}
-                  </span>
-                  <div>
-                    <p className="font-semibold">{s.t}</p>
-                    <p className="text-sm text-gray-600">{s.d}</p>
-                  </div>
-                </div>
-              </li>
-            ))}
-          </ol>
-          <div className="mt-5 flex flex-wrap items-center gap-4 text-sm text-gray-700">
-            <span className="inline-flex items-center gap-2">
-              <FiClock /> Mon–Sat, 9–6
-            </span>
-            <span className="inline-flex items-center gap-2">
-              <FiPhone /> +1 (437) 555‑0146
-            </span>
-            <span className="inline-flex items-center gap-2">
-              <FiMapPin /> 125 King St W, Toronto
-            </span>
-            <span className="inline-flex items-center gap-2">
-              <FiCreditCard /> Financing available
-            </span>
-          </div>
-        </div>
-      </section>
-
-      {/* Social proof */}
-      <section className="max-w-7xl mx-auto px-6 pb-12">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.98 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          className="rounded-3xl border border-black/5 bg-white/80 backdrop-blur p-6 shadow-xl"
-        >
-          <h2 className="text-2xl md:text-3xl font-bold">
-            Why customers love us
-          </h2>
-          <div className="mt-4 grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[
-              { n: "4.9★", l: "local rating" },
-              { n: "12mo", l: "service guarantee" },
-              { n: "30%", l: "longer tire life*" },
-              { n: "+10k", l: "happy drivers" },
-            ].map((s, i) => (
-              <Stat key={i} n={s.n} l={s.l} />
-            ))}
-          </div>
-          <p className="mt-3 text-xs text-gray-600">
-            *With proper alignment and rotation schedule. Results vary.
-          </p>
-        </motion.div>
-      </section>
-
-      {/* FAQ */}
-      <section className="max-w-7xl mx-auto px-6 pb-20">
-        <div className="rounded-3xl border border-black/5 bg-white/80 backdrop-blur p-6 shadow-xl">
-          <h2 className="text-2xl md:text-3xl font-bold">Promo FAQ</h2>
-          <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-6">
-            <Faq
-              q="Can I combine coupons?"
-              a="Unless stated otherwise, coupons cannot be combined with other offers or price matches."
-            />
-            <Faq
-              q="Do promos apply to all vehicles?"
-              a="Most deals cover passenger cars and light SUVs. Some trucks or specialty models may vary."
-            />
-            <Faq
-              q="Online vs in‑store pricing?"
-              a="Same great price. Some online‑only codes may require booking through our website."
-            />
-            <Faq
-              q="How long are deals valid?"
-              a={`Service specials end on ${bannerEndLabel}. Parts promos while supplies last.`}
-            />
-          </div>
-        </div>
-      </section>
-
       {/* Book CTA */}
-      <section id="book" className="max-w-7xl mx-auto px-6 pb-20">
+      <section id="book" className="max-w-7xl mx-auto px-6 py-14">
         <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-black to-[var(--color-primary)] text-white p-6 md:p-8 shadow-xl">
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
             <div className="lg:col-span-2">
@@ -323,6 +153,58 @@ export default function PromosPage() {
           <GiCarWheel className="absolute -right-10 -top-14 h-44 w-44 opacity-20 rotate-12" />
         </div>
       </section>
+
+      {/* Social proof */}
+      <section className="max-w-7xl mx-auto px-6 pb-12">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.98 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          className="rounded-3xl border border-black/5 bg-white/80 backdrop-blur p-6 shadow-xl"
+        >
+          <h2 className="text-2xl md:text-3xl font-bold">
+            Why customers love us
+          </h2>
+          <div className="mt-4 grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              { n: "4.9★", l: "local rating" },
+              { n: "12mo", l: "service guarantee" },
+              { n: "30%", l: "longer tire life*" },
+              { n: "+10k", l: "happy drivers" },
+            ].map((s, i) => (
+              <Stat key={i} n={s.n} l={s.l} />
+            ))}
+          </div>
+          <p className="mt-3 text-xs text-gray-600">
+            *With proper alignment and rotation schedule. Results vary.
+          </p>
+        </motion.div>
+      </section>
+
+      {/* FAQ */}
+      {/* <section className="max-w-7xl mx-auto px-6 pb-20">
+        <div className="rounded-3xl border border-black/5 bg-white/80 backdrop-blur p-6 shadow-xl">
+          <h2 className="text-2xl md:text-3xl font-bold">Promo FAQ</h2>
+          <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-6">
+            <Faq
+              q="Can I combine coupons?"
+              a="Unless stated otherwise, coupons cannot be combined with other offers or price matches."
+            />
+            <Faq
+              q="Do promos apply to all vehicles?"
+              a="Most deals cover passenger cars and light SUVs. Some trucks or specialty models may vary."
+            />
+            <Faq
+              q="Online vs in‑store pricing?"
+              a="Same great price. Some online‑only codes may require booking through our website."
+            />
+            <Faq
+              q="How long are deals valid?"
+              a={`Service specials end on ${bannerEndLabel}. Parts promos while supplies last.`}
+            />
+          </div>
+        </div>
+      </section> */}
 
       {/* Terms */}
       <section className="max-w-7xl mx-auto px-6 pb-24">

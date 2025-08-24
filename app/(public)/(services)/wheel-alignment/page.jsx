@@ -54,7 +54,7 @@ export default function WheelAlignmentPage() {
       </div>
 
       {/* Hero */}
-      <section className="relative overflow-hidden">
+      <section className="relative overflow-hidden bg-gray-100">
         <div className="max-w-7xl mx-auto px-6 pt-16 pb-8 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           <div>
             <motion.h1
@@ -87,14 +87,14 @@ export default function WheelAlignmentPage() {
             >
               <a
                 href="#appointment"
-                className="group inline-flex items-center gap-2 rounded-2xl bg-[var(--color-primary)] px-6 py-3 text-white font-semibold hover:bg-black transition-colors"
+                className="group inline-flex items-center gap-2 rounded-lg bg-[var(--color-primary)] px-6 py-3 text-white font-semibold hover:bg-black transition-colors"
               >
                 Book an appointment
                 <FiArrowRight className="transition-transform group-hover:translate-x-0.5" />
               </a>
               <a
                 href="tel:+14375550146"
-                className="inline-flex items-center gap-2 rounded-2xl bg-white/80 backdrop-blur border border-black/5 px-6 py-3 font-semibold hover:bg-white"
+                className="inline-flex items-center gap-2 rounded-lg bg-white/80 backdrop-blur border border-black/5 px-6 py-3 font-semibold hover:bg-white"
               >
                 <FiPhone /> Call us
               </a>
@@ -109,13 +109,13 @@ export default function WheelAlignmentPage() {
             >
               {[
                 { icon: <FiClock />, text: "Same‑day slots" },
-                { icon: <FiShield />, text: "12‑month guarantee" },
-                { icon: <FiStar />, text: "4.9★ local rating" },
+                { icon: <FiShield />, text: "12‑m guarantee" },
+                { icon: <FiStar />, text: "4.9★ rating" },
               ].map((f, i) => (
                 <motion.li
                   key={i}
                   variants={item}
-                  className="flex items-center gap-2 rounded-2xl bg-white/70 backdrop-blur border border-black/5 px-4 py-3 shadow-sm"
+                  className="flex items-center gap-2 rounded-md bg-white/70 backdrop-blur border border-black/5 px-4 py-3 shadow-sm"
                 >
                   <span className="grid h-9 w-9 place-items-center rounded-xl bg-[var(--color-primary)]/10 text-[var(--color-primary)]">
                     {f.icon}
@@ -132,9 +132,9 @@ export default function WheelAlignmentPage() {
             transition={{ duration: 0.6 }}
             className="relative"
           >
-            <div className="relative aspect-[5/4] overflow-hidden rounded-3xl border border-black/5 bg-gradient-to-br from-white to-gray-50 shadow-xl">
+            <div className="relative aspect-[5/4] overflow-hidden rounded-xl border border-black/5 bg-gradient-to-br from-white to-gray-50 shadow-xl">
               <Image
-                src="/images/g3.webp"
+                src="/images/Wheel-Alignments.png"
                 alt="Wheel alignment bay"
                 fill
                 className="object-cover"
@@ -166,7 +166,7 @@ export default function WheelAlignmentPage() {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="rounded-3xl border border-black/5 bg-white/80 backdrop-blur p-6 shadow-xl"
+            className="rounded-xl border border-black/5 bg-white/80 backdrop-blur p-6 shadow-xl shadow-red-50 ring ring-red-100"
           >
             <h3 className="flex items-center gap-2 text-xl font-semibold">
               <FiAlertTriangle className="text-red-500" /> Problems
@@ -195,10 +195,10 @@ export default function WheelAlignmentPage() {
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="rounded-3xl border border-black/5 bg-white/80 backdrop-blur p-6 shadow-xl"
+            className="rounded-xl border border-black/5 bg-white/80 backdrop-blur p-6 shadow-xl shadow-green-50 ring ring-green-100"
           >
             <h3 className="flex items-center gap-2 text-xl font-semibold">
-              <FiTool className="text-[var(--color-primary)]" /> Solutions
+              <FiTool className="text-green-500" /> Solutions
             </h3>
             <ul className="mt-4 space-y-3">
               {[
@@ -228,7 +228,7 @@ export default function WheelAlignmentPage() {
                 },
               ].map((s, i) => (
                 <li key={i} className="flex items-start gap-3">
-                  <span className="mt-1 grid h-6 w-6 place-items-center rounded-md bg-[var(--color-primary)]/10 text-[var(--color-primary)]">
+                  <span className="mt-1 grid h-6 w-6 place-items-center rounded-md bg-green-500/10 text-green-500">
                     <FiCheckCircle />
                   </span>
                   <span>
@@ -242,7 +242,7 @@ export default function WheelAlignmentPage() {
       </section>
 
       {/* Process steps */}
-      <section className="max-w-7xl mx-auto px-6 py-8">
+      {/* <section className="max-w-7xl mx-auto px-6 py-8">
         <div className="rounded-3xl border border-black/5 bg-white/80 backdrop-blur p-6 shadow-xl">
           <h2 className="text-2xl md:text-3xl font-bold">How it works</h2>
           <motion.ol
@@ -288,11 +288,11 @@ export default function WheelAlignmentPage() {
             ))}
           </motion.ol>
         </div>
-      </section>
+      </section> */}
 
       {/* Appointment section */}
-      <section id="appointment" className="max-w-7xl mx-auto px-6 py-14">
-        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-black to-[var(--color-primary)] text-white p-6 md:p-8 shadow-xl">
+      <section id="appointment" className="max-w-7xl mx-auto px-6 pb-14">
+        <div className="relative overflow-hidden rounded-xl bg-gradient-to-r from-black to-[var(--color-primary)] text-white p-6 md:p-8 shadow-xl">
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
             <div className="lg:col-span-2">
               <h2 className="text-3xl font-bold">Book your alignment</h2>
@@ -322,7 +322,7 @@ export default function WheelAlignmentPage() {
             </div>
 
             <div className="lg:justify-self-end">
-              <div className="rounded-2xl bg-white/70 text-black p-5 shadow-2xl ring-1 ring-black/5">
+              <div className="rounded-xl bg-white/70 text-black p-5 shadow-2xl ring-1 ring-black/5">
                 <p className="text-sm font-semibold">What’s included</p>
                 <ul className="mt-2 space-y-2 text-sm">
                   <li className="flex items-center gap-2">
@@ -359,12 +359,12 @@ export default function WheelAlignmentPage() {
             </div>
           </div>
 
-          <GiCarWheel className="absolute -right-10 -top-14 h-44 w-44 opacity-20 rotate-12" />
+          <GiCarWheel className="absolute -right-10 -top-14 h-44 w-44 opacity-20 rotate-12 animate-spin-slow" />
         </div>
       </section>
 
       {/* Results / Stats */}
-      <section className="max-w-7xl mx-auto px-6 pb-14">
+      {/* <section className="max-w-7xl mx-auto px-6 pb-14">
         <motion.div
           initial={{ opacity: 0, scale: 0.98 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -385,7 +385,7 @@ export default function WheelAlignmentPage() {
             ))}
           </div>
         </motion.div>
-      </section>
+      </section> */}
 
       {/* FAQ */}
       <section className="max-w-7xl mx-auto px-6 pb-20">

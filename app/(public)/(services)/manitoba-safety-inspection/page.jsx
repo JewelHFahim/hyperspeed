@@ -57,7 +57,7 @@ export default function ManitobaSafetyInspectionPage() {
       </div>
 
       {/* Intro */}
-      <section className="relative overflow-hidden">
+      <section className="relative overflow-hidden bg-gray-100">
         <div className="max-w-7xl mx-auto px-6 pt-16 pb-8 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           <div>
             <motion.h1
@@ -89,14 +89,14 @@ export default function ManitobaSafetyInspectionPage() {
             >
               <a
                 href="#book"
-                className="group inline-flex items-center gap-2 rounded-2xl bg-[var(--color-primary)] px-6 py-3 text-white font-semibold hover:bg-black transition-colors"
+                className="group inline-flex items-center gap-2 rounded-lg bg-[var(--color-primary)] px-6 py-3 text-white font-semibold hover:bg-black transition-colors"
               >
                 Book inspection
                 <FiArrowRight className="transition-transform group-hover:translate-x-0.5" />
               </a>
               <a
                 href="tel:+14375550146"
-                className="inline-flex items-center gap-2 rounded-2xl bg-white/80 backdrop-blur border border-black/5 px-6 py-3 font-semibold hover:bg-white"
+                className="inline-flex items-center gap-2 rounded-lg bg-white/80 backdrop-blur border border-black/5 px-6 py-3 font-semibold hover:bg-white"
               >
                 <FiPhone /> Call us
               </a>
@@ -116,7 +116,7 @@ export default function ManitobaSafetyInspectionPage() {
                 <motion.li
                   key={i}
                   variants={item}
-                  className="flex items-center gap-2 rounded-2xl bg-white/70 backdrop-blur border border-black/5 px-4 py-3 shadow-sm"
+                  className="flex items-center gap-2 bg-white/70 backdrop-blur rounded-md border border-black/5 px-4 py-3 shadow-sm"
                 >
                   <span className="grid h-9 w-9 place-items-center rounded-xl bg-[var(--color-primary)]/10 text-[var(--color-primary)]">
                     {f.icon}
@@ -133,7 +133,7 @@ export default function ManitobaSafetyInspectionPage() {
             transition={{ duration: 0.6 }}
             className="relative"
           >
-            <div className="relative aspect-[5/4] overflow-hidden rounded-3xl border border-black/5 bg-gradient-to-br from-white to-gray-50 shadow-xl">
+            <div className="relative aspect-[5/4] overflow-hidden rounded-xl border border-black/5 bg-gradient-to-br from-white to-gray-50 shadow-xl">
               <Image
                 src="/images/g3.webp"
                 alt="Safety inspection bay"
@@ -150,7 +150,7 @@ export default function ManitobaSafetyInspectionPage() {
       </section>
 
       {/* What we check */}
-      <section className="max-w-7xl mx-auto px-6 py-14">
+      <section className="max-w-7xl mx-auto px-6 py-8">
         <div className="mb-6">
           <h2 className="text-3xl md:text-4xl font-bold">
             What’s included in the inspection
@@ -198,7 +198,7 @@ export default function ManitobaSafetyInspectionPage() {
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="rounded-3xl border border-black/5 bg-white/80 backdrop-blur p-6 shadow-xl"
+              className="rounded-xl border border-black/5 bg-white/80 backdrop-blur p-6 shadow-lg"
             >
               <h3 className="flex items-center gap-2 text-xl font-semibold">
                 <span className="grid h-9 w-9 place-items-center rounded-xl bg-black/90 text-white">
@@ -219,7 +219,7 @@ export default function ManitobaSafetyInspectionPage() {
       </section>
 
       {/* Bring these */}
-      <section className="max-w-7xl mx-auto px-6 py-8">
+      {/* <section className="max-w-7xl mx-auto px-6 py-8">
         <div className="rounded-3xl border border-black/5 bg-white/80 backdrop-blur p-6 shadow-xl">
           <h2 className="text-2xl md:text-3xl font-bold">What to bring</h2>
           <div className="mt-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -260,7 +260,7 @@ export default function ManitobaSafetyInspectionPage() {
             and circumstance. We’ll confirm details when you book.
           </p>
         </div>
-      </section>
+      </section> */}
 
       {/* Pass vs. Fix & Retest */}
       <section className="max-w-7xl mx-auto px-6 py-8">
@@ -269,7 +269,7 @@ export default function ManitobaSafetyInspectionPage() {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="rounded-3xl border border-black/5 bg-white/80 backdrop-blur p-6 shadow-xl"
+            className="rounded-xl border border-black/5 bg-white/80 backdrop-blur p-6 shadow-xl"
           >
             <h3 className="flex items-center gap-2 text-xl font-semibold text-green-700">
               <FiCheckCircle /> Pass
@@ -280,11 +280,12 @@ export default function ManitobaSafetyInspectionPage() {
               records and any registration needs.
             </p>
           </motion.div>
+
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="rounded-3xl border border-black/5 bg-white/80 backdrop-blur p-6 shadow-xl"
+            className="rounded-xl border border-black/5 bg-white/80 backdrop-blur p-6 shadow-xl"
           >
             <h3 className="flex items-center gap-2 text-xl font-semibold text-red-600">
               <FiAlertTriangle /> Fix & retest
@@ -299,7 +300,7 @@ export default function ManitobaSafetyInspectionPage() {
       </section>
 
       {/* Pricing */}
-      <section className="max-w-7xl mx-auto px-6 py-8">
+      {/* <section className="max-w-7xl mx-auto px-6 py-8">
         <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-black to-[var(--color-primary)] text-white p-6 md:p-8 shadow-xl">
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
             <div className="lg:col-span-2">
@@ -357,10 +358,10 @@ export default function ManitobaSafetyInspectionPage() {
           </div>
           <FiTool className="absolute -right-10 -top-14 h-44 w-44 opacity-20 rotate-12" />
         </div>
-      </section>
+      </section> */}
 
       {/* Prep tips */}
-      <section className="max-w-7xl mx-auto px-6 py-8">
+      {/* <section className="max-w-7xl mx-auto px-6 py-8">
         <div className="rounded-3xl border border-black/5 bg-white/80 backdrop-blur p-6 shadow-xl">
           <h2 className="text-2xl md:text-3xl font-bold">Quick prep tips</h2>
           <motion.ol
@@ -402,10 +403,10 @@ export default function ManitobaSafetyInspectionPage() {
             ))}
           </motion.ol>
         </div>
-      </section>
+      </section> */}
 
       {/* FAQ */}
-      <section className="max-w-7xl mx-auto px-6 pb-20">
+      {/* <section className="max-w-7xl mx-auto px-6 pb-20">
         <div className="rounded-3xl border border-black/5 bg-white/80 backdrop-blur p-6 shadow-xl">
           <h2 className="text-2xl md:text-3xl font-bold">
             Manitoba Safety FAQ
@@ -433,11 +434,11 @@ export default function ManitobaSafetyInspectionPage() {
             We’ll confirm current details when booking.
           </p>
         </div>
-      </section>
+      </section> */}
 
       {/* Book CTA */}
-      <section id="book" className="max-w-7xl mx-auto px-6 pb-20">
-        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-black to-[var(--color-primary)] text-white p-6 md:p-8 shadow-xl">
+      <section id="book" className="max-w-7xl mx-auto px-6 pt-8 pb-20">
+        <div className="relative overflow-hidden rounded-xl bg-gradient-to-r from-black to-[var(--color-primary)] text-white p-6 md:p-8 shadow-xl">
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
             <div className="lg:col-span-2">
               <h2 className="text-3xl font-bold">
@@ -466,7 +467,7 @@ export default function ManitobaSafetyInspectionPage() {
               </div>
             </div>
             <div className="lg:justify-self-end">
-              <div className="rounded-2xl bg-white/70 text-black p-5 shadow-2xl ring-1 ring-black/5">
+              <div className="rounded-2xl bg-white/70 text-black p-5 shadow-xl ring-1 ring-black/5">
                 <p className="text-sm font-semibold">What’s included</p>
                 <ul className="mt-2 space-y-2 text-sm">
                   <li className="flex items-center gap-2">

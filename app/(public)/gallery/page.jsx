@@ -152,7 +152,6 @@
 //   );
 // }
 
-
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
@@ -186,7 +185,9 @@ export default function GalleryPage() {
     const q = query.trim().toLowerCase();
     return MEDIA.filter((m) => {
       const matchesQuery = q
-        ? [m.title, m.caption, ...(m.tags || [])].some((s) => s.toLowerCase().includes(q))
+        ? [m.title, m.caption, ...(m.tags || [])].some((s) =>
+            s.toLowerCase().includes(q)
+          )
         : true;
       const matchesTags = activeTags.length
         ? activeTags.every((t) => m.tags?.includes(t))
@@ -211,13 +212,16 @@ export default function GalleryPage() {
         <div className="absolute inset-0 bg-[radial-gradient(60%_60%_at_15%_0%,rgba(0,122,255,0.11),transparent),radial-gradient(60%_60%_at_85%_10%,rgba(255,99,71,0.10),transparent)]" />
         <div
           className="absolute inset-0 [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)]"
-          style={{ backgroundImage: "url('/textures/noise.png')", opacity: 0.08 }}
+          style={{
+            backgroundImage: "url('/textures/noise.png')",
+            opacity: 0.08,
+          }}
         />
       </div>
 
       {/* Controls */}
       <section className="max-w-7xl mx-auto px-6 pt-10">
-        <div className="rounded-3xl border border-black/5 bg-white/80 backdrop-blur p-4 md:p-5 shadow-xl">
+        <div className="rounded-xl border border-black/5 bg-white/80 backdrop-blur p-4 md:p-5 shadow-lg">
           <div className="flex flex-col md:flex-row md:items-center gap-3 md:gap-4">
             <div className="relative flex-1">
               <FiSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500" />
@@ -229,17 +233,33 @@ export default function GalleryPage() {
               />
             </div>
             <div className="flex items-center gap-2">
-              <span className="inline-flex items-center gap-2 rounded-xl bg-black text-white px-3 py-2 text-sm"><FiFilter /> Filters</span>
+              <span className="inline-flex items-center gap-2 rounded-xl bg-black text-white px-3 py-2 text-sm">
+                <FiFilter /> Filters
+              </span>
               <div className="flex flex-wrap gap-2">
                 {allTags.slice(0, 8).map((t) => (
-                  <TagPill key={t} tag={t} active={activeTags.includes(t)} onClick={() => toggleTag(t, activeTags, setActiveTags)} />
+                  <TagPill
+                    key={t}
+                    tag={t}
+                    active={activeTags.includes(t)}
+                    onClick={() => toggleTag(t, activeTags, setActiveTags)}
+                  />
                 ))}
                 {allTags.length > 8 && (
                   <details className="relative">
-                    <summary className="cursor-pointer text-sm px-3 py-2 rounded-xl border border-black/10">More</summary>
+                    <summary className="cursor-pointer text-sm px-3 py-2 rounded-xl border border-black/10">
+                      More
+                    </summary>
                     <div className="absolute right-0 z-10 mt-2 w-56 rounded-xl border border-black/10 bg-white p-2 shadow-lg max-h-72 overflow-auto">
                       {allTags.slice(8).map((t) => (
-                        <TagRow key={t} tag={t} active={activeTags.includes(t)} onClick={() => toggleTag(t, activeTags, setActiveTags)} />
+                        <TagRow
+                          key={t}
+                          tag={t}
+                          active={activeTags.includes(t)}
+                          onClick={() =>
+                            toggleTag(t, activeTags, setActiveTags)
+                          }
+                        />
                       ))}
                     </div>
                   </details>
@@ -253,16 +273,18 @@ export default function GalleryPage() {
       {/* Grid */}
       <section className="max-w-7xl mx-auto px-6 py-10">
         {filtered.length === 0 ? (
-          <div className="rounded-2xl border border-black/5 bg-white p-6 text-center text-gray-600">No results. Try clearing filters.</div>
+          <div className="rounded-2xl border border-black/5 bg-white p-6 text-center text-gray-600">
+            No results. Try clearing filters.
+          </div>
         ) : (
-          <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 [column-fill:_balance]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {filtered.map((m, idx) => (
               <motion.div
                 key={m.id}
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
-                className="mb-4 break-inside-avoid"
+                className="h-full"
               >
                 {m.kind === "before-after" ? (
                   <BeforeAfterCard media={m} onOpen={() => openAt(idx)} />
@@ -276,12 +298,20 @@ export default function GalleryPage() {
       </section>
 
       {/* Lightbox */}
-      <Lightbox items={filtered} index={lightboxIndex} onClose={close} onIndex={(i) => setLightboxIndex(i)} />
+      <Lightbox
+        items={filtered}
+        index={lightboxIndex}
+        onClose={close}
+        onIndex={(i) => setLightboxIndex(i)}
+      />
 
       {/* Footer note */}
       <section className="max-w-7xl mx-auto px-6 pb-16">
         <div className="rounded-2xl border border-black/5 bg-white p-4 text-xs text-gray-600">
-          <p>All media shot on‑site with customer permission. Results vary by vehicle condition and parts selection.</p>
+          <p>
+            All media shot on‑site with customer permission. Results vary by
+            vehicle condition and parts selection.
+          </p>
         </div>
       </section>
     </main>
@@ -296,7 +326,9 @@ function TagPill({ tag, active, onClick }) {
       onClick={onClick}
       className={[
         "text-sm px-3 py-2 rounded-xl border",
-        active ? "bg-black text-white border-black" : "bg-white border-black/10",
+        active
+          ? "bg-black text-white border-black"
+          : "bg-white border-black/10",
       ].join(" ")}
     >
       {tag}
@@ -310,51 +342,75 @@ function TagRow({ tag, active, onClick }) {
       onClick={onClick}
       className="w-full text-left text-sm px-2 py-1 rounded-lg hover:bg-black/5 flex items-center gap-2"
     >
-      <span className={`inline-block h-2 w-2 rounded-full ${active ? "bg-black" : "bg-gray-300"}`} />
+      <span
+        className={`inline-block h-2 w-2 rounded-full ${
+          active ? "bg-black" : "bg-gray-300"
+        }`}
+      />
       {tag}
     </button>
   );
 }
 
 function ThumbCard({ media, onOpen }) {
-  const isVideo = media.kind === "video";
   return (
-    <article className="group relative overflow-hidden rounded-3xl border border-black/5 bg-white shadow-xl">
-      <div className="relative w-full" style={{ aspectRatio: media.aspect || "4/3" }}>
-        {isVideo ? (
-          <video className="h-full w-full object-cover" poster={media.src} muted playsInline preload="metadata" />
-        ) : (
-          <Image src={media.src} alt={media.title} fill className="object-cover" />
-        )}
+    <article className="group relative flex flex-col overflow-hidden rounded-xl border border-black/5 bg-white shadow-xl h-full">
+      {/* Image */}
+      <div
+        className="relative w-full"
+        style={{ aspectRatio: media.aspect || "4/3" }}
+      >
+        <Image src={media.src} alt={media.title} fill className="object-cover" />
         <button
           onClick={onOpen}
           className="absolute inset-0 grid place-items-center bg-black/0 group-hover:bg-black/20 transition-colors"
           aria-label="Open lightbox"
         >
           <span className="opacity-0 group-hover:opacity-100 transition-opacity rounded-full bg-white/90 p-2 shadow">
-            {isVideo ? <FiPlayCircle className="h-6 w-6" /> : <FiMaximize2 className="h-6 w-6" />}
+            <FiMaximize2 className="h-6 w-6" />
           </span>
         </button>
       </div>
-      <div className="p-4">
+
+      {/* Text */}
+      <div className="p-4 flex flex-col flex-1">
         <div className="flex items-center gap-2 text-xs text-gray-600">
           <FiTag /> {media.tags?.join(" • ")}
         </div>
         <h3 className="mt-1 text-base font-semibold">{media.title}</h3>
-        {media.caption && <p className="text-sm text-gray-700">{media.caption}</p>}
+        {media.caption && (
+          <p className="text-sm text-gray-700 flex-1">{media.caption}</p>
+        )}
       </div>
     </article>
   );
 }
 
+
 function BeforeAfterCard({ media, onOpen }) {
   const [pos, setPos] = useState(50);
   return (
     <article className="relative overflow-hidden rounded-3xl border border-black/5 bg-white shadow-xl">
-      <div className="relative w-full" style={{ aspectRatio: media.aspect || "4/3" }}>
-        <Image src={media.before} alt={`${media.title} - before`} fill className="object-cover" />
-        <div className="absolute inset-0" style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }}>
-          <Image src={media.after} alt={`${media.title} - after`} fill className="object-cover" />
+      <div
+        className="relative w-full"
+        style={{ aspectRatio: media.aspect || "4/3" }}
+      >
+        <Image
+          src={media.before}
+          alt={`${media.title} - before`}
+          fill
+          className="object-cover"
+        />
+        <div
+          className="absolute inset-0"
+          style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }}
+        >
+          <Image
+            src={media.after}
+            alt={`${media.title} - after`}
+            fill
+            className="object-cover"
+          />
         </div>
         <input
           type="range"
@@ -364,16 +420,26 @@ function BeforeAfterCard({ media, onOpen }) {
           max={100}
           className="absolute inset-x-6 bottom-4 appearance-none h-1 rounded bg-white/60"
         />
-        <div className="absolute left-3 top-3 rounded-xl bg-white/85 px-2 py-1 text-xs font-semibold">Before</div>
-        <div className="absolute right-3 top-3 rounded-xl bg-white/85 px-2 py-1 text-xs font-semibold">After</div>
-        <button onClick={onOpen} className="absolute inset-0" aria-label="Open lightbox" />
+        <div className="absolute left-3 top-3 rounded-xl bg-white/85 px-2 py-1 text-xs font-semibold">
+          Before
+        </div>
+        <div className="absolute right-3 top-3 rounded-xl bg-white/85 px-2 py-1 text-xs font-semibold">
+          After
+        </div>
+        <button
+          onClick={onOpen}
+          className="absolute inset-0"
+          aria-label="Open lightbox"
+        />
       </div>
       <div className="p-4">
         <div className="flex items-center gap-2 text-xs text-gray-600">
           <FiTag /> {media.tags?.join(" • ")}
         </div>
         <h3 className="mt-1 text-base font-semibold">{media.title}</h3>
-        {media.caption && <p className="text-sm text-gray-700">{media.caption}</p>}
+        {media.caption && (
+          <p className="text-sm text-gray-700">{media.caption}</p>
+        )}
       </div>
     </article>
   );
@@ -418,13 +484,25 @@ function Lightbox({ items, index, onClose, onIndex }) {
             {/* Media */}
             <div className="relative w-full rounded-2xl bg-black/60 overflow-hidden">
               <MediaViewer media={items[i]} />
-              <button onClick={onClose} className="absolute right-3 top-3 rounded-full bg-white/90 p-2 shadow" aria-label="Close">
+              <button
+                onClick={onClose}
+                className="absolute right-3 top-3 rounded-full bg-white/90 p-2 shadow"
+                aria-label="Close"
+              >
                 <FiX />
               </button>
-              <button onClick={prev} className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-white/90 p-2 shadow" aria-label="Previous">
+              <button
+                onClick={prev}
+                className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-white/90 p-2 shadow"
+                aria-label="Previous"
+              >
                 <FiChevronLeft />
               </button>
-              <button onClick={next} className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-white/90 p-2 shadow" aria-label="Next">
+              <button
+                onClick={next}
+                className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-white/90 p-2 shadow"
+                aria-label="Next"
+              >
                 <FiChevronRight />
               </button>
             </div>
@@ -434,12 +512,19 @@ function Lightbox({ items, index, onClose, onIndex }) {
               <div className="flex flex-wrap items-center justify-between gap-3">
                 <div>
                   <h3 className="text-lg font-semibold">{items[i].title}</h3>
-                  {items[i].caption && <p className="text-sm text-gray-700">{items[i].caption}</p>}
+                  {items[i].caption && (
+                    <p className="text-sm text-gray-700">{items[i].caption}</p>
+                  )}
                 </div>
                 {items[i].tags?.length ? (
                   <div className="flex flex-wrap gap-2 text-xs text-gray-600">
                     {items[i].tags.map((t) => (
-                      <span key={t} className="rounded-full bg-black/5 px-3 py-1">{t}</span>
+                      <span
+                        key={t}
+                        className="rounded-full bg-black/5 px-3 py-1"
+                      >
+                        {t}
+                      </span>
                     ))}
                   </div>
                 ) : null}
@@ -453,26 +538,33 @@ function Lightbox({ items, index, onClose, onIndex }) {
 }
 
 function MediaViewer({ media }) {
-  if (media.kind === "video") {
-    return (
-      <video controls className="w-full h-auto" poster={media.src} preload="metadata">
-        <source src={media.video || media.src} />
-      </video>
-    );
-  }
   if (media.kind === "before-after") {
     return (
-      <div className="relative w-full" style={{ aspectRatio: media.aspect || "16/9" }}>
-        <Image src={media.after} alt={`${media.title} - after`} fill className="object-contain" />
+      <div
+        className="relative w-full"
+        style={{ aspectRatio: media.aspect || "16/9" }}
+      >
+        <Image
+          src={media.after}
+          alt={`${media.title} - after`}
+          fill
+          className="object-contain"
+        />
       </div>
     );
   }
+
+  // Default: image
   return (
-    <div className="relative w-full" style={{ aspectRatio: media.aspect || "16/9" }}>
+    <div
+      className="relative w-full"
+      style={{ aspectRatio: media.aspect || "16/9" }}
+    >
       <Image src={media.src} alt={media.title} fill className="object-contain" />
     </div>
   );
 }
+
 
 /* ------------------------------- Data ------------------------------- */
 const MEDIA = [
@@ -485,16 +577,16 @@ const MEDIA = [
     tags: ["Alignment", "Sedan", "BMW"],
     aspect: "5/4",
   },
-  {
-    id: "m2",
-    kind: "before-after",
-    title: "Before/After – Toe Correction",
-    caption: "Factory spec achieved; tire wear normalized.",
-    before: "/images/g2.webp",
-    after: "/images/after-alignment.jpg",
-    tags: ["Alignment", "Before/After"],
-    aspect: "4/3",
-  },
+  // {
+  //   id: "m2",
+  //   kind: "before-after",
+  //   title: "Before/After – Toe Correction",
+  //   caption: "Factory spec achieved; tire wear normalized.",
+  //   before: "/images/g2.webp",
+  //   after: "/images/after-alignment.jpg",
+  //   tags: ["Alignment", "Before/After"],
+  //   aspect: "4/3",
+  // },
   {
     id: "m3",
     kind: "image",
@@ -508,23 +600,13 @@ const MEDIA = [
     id: "m4",
     kind: "image",
     title: "New Tire Fitment – SUV",
-    caption: "All‑terrain set balanced and road‑tested.",
+    caption: "All-terrain set balanced and road-tested.",
     src: "/images/g3.webp",
     tags: ["Tires", "SUV", "Parts"],
     aspect: "4/3",
   },
   {
     id: "m5",
-    kind: "video",
-    title: "Road Force Balancing Demo",
-    caption: "Why high‑speed vibration disappears.",
-    src: "/images/g2.webp",
-    video: "/videos/road-force.mp4",
-    tags: ["Tires", "Video"],
-    aspect: "16/9",
-  },
-  {
-    id: "m6",
     kind: "image",
     title: "Battery Install – Corolla",
     caption: "AGM battery with vent kit.",
@@ -534,8 +616,11 @@ const MEDIA = [
   },
 ];
 
+
 /* ---------------------------- Utils/Helpers ---------------------------- */
 
-function toggleTag(tag, active, setActive){
-  setActive(active.includes(tag) ? active.filter((t) => t !== tag) : [...active, tag]);
+function toggleTag(tag, active, setActive) {
+  setActive(
+    active.includes(tag) ? active.filter((t) => t !== tag) : [...active, tag]
+  );
 }

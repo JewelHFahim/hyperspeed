@@ -1,11 +1,11 @@
 "use client";
 
-import { FaCog, FaBars, FaTimes } from "react-icons/fa";
 import Link from "next/link";
-import Container from "./Container";
 import { useState } from "react";
-import { MdOutlineKeyboardArrowRight } from "react-icons/md";
+import Container from "./Container";
 import { motion, AnimatePresence } from "framer-motion";
+import { FaCog, FaBars, FaTimes } from "react-icons/fa";
+import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 
 const navLinks = [
   {

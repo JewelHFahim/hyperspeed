@@ -81,22 +81,25 @@ export default function HeroSection({
 
         {/* Vignette + gradient wash */}
         <div className="absolute inset-0 bg-black" />
-        <div className="absolute inset-0  [mask-image:radial-gradient(60%_50%_at_50%_50%,black,transparent_80%)]"
-          style={{ backgroundImage: "url('/images/texture1.png')", opacity: 1 }}/>
+        <div
+          className="absolute inset-0 [mask-image:radial-gradient(60%_50%_at_50%_50%,black,transparent_90%)]"
+          style={{ backgroundImage: "url('/images/texture2.png')", opacity: 1 }}
+        />
       </div>
 
       <Container>
         <div className="relative mx-auto max-w-4xl pt-20 md:pt-28 text-center">
           <motion.p
             {...fadeIn(0.05)}
-            className="mx-auto w-max rounded-full border border-white/15 bg-white/5 px-3 py-1 text-[11px] uppercase tracking-[0.22em] text-white/80 backdrop-blur"
+            className="mx-auto w-max rounded-full border border-blue-500/15 bg-blue-500/5 px-3 py-1 text-[11px] uppercase tracking-[0.22em] text-white/80 backdrop-blur"
           >
-            Featured • Automotive
+            Featured <span className="text-blue-500 animate-pulse">•</span>  Automotive
           </motion.p>
 
           <motion.h1
             {...fadeIn(0.12)}
-            className="mt-4 font-extrabold leading-[0.95] tracking-tight text-4xl sm:text-5xl md:text-6xl">
+            className="mt-4 font-extrabold leading-[0.95] tracking-tight text-4xl sm:text-5xl md:text-6xl"
+          >
             <span className="inline-block">{title}</span>{" "}
             {colorTitle && (
               <span className="relative inline-block">
@@ -148,22 +151,6 @@ export default function HeroSection({
           )}
         </div>
       </Container>
-
-      {/* Floating accents */}
-      <motion.div
-        aria-hidden
-        initial={{ opacity: 0, y: 12 }}
-        animate={{ opacity: 0.6, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.3 }}
-        className="pointer-events-none absolute -right-8 top-10 h-28 w-28 rounded-full bg-[var(--color-primary)]/25 blur-3xl"
-      />
-      <motion.div
-        aria-hidden
-        initial={{ opacity: 0, y: -12 }}
-        animate={{ opacity: 0.5, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.35 }}
-        className="pointer-events-none absolute -left-10 bottom-10 h-24 w-24 rounded-full bg-white/20 blur-3xl"
-      />
     </section>
   );
 }

@@ -438,7 +438,7 @@ export default function ManitobaSafetyInspectionPage() {
 
       {/* Book CTA */}
       <section id="book" className="max-w-7xl mx-auto px-6 pt-8 pb-20">
-        <div className="relative overflow-hidden rounded-xl bg-gradient-to-r from-black to-[var(--color-primary)] text-white p-6 md:p-8 shadow-xl">
+        <div className="relative overflow-hidden rounded-xl bg-gradient-to-r from-cyan-500 to-[var(--color-primary)] text-white p-6 md:p-8 shadow-xl">
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
             <div className="lg:col-span-2">
               <h2 className="text-3xl font-bold">
@@ -492,7 +492,7 @@ export default function ManitobaSafetyInspectionPage() {
               </div>
             </div>
           </div>
-          <FiTool className="absolute -right-10 -top-14 h-44 w-44 opacity-20 rotate-12" />
+          <FiTool className="absolute -right-10 -top-14 h-44 w-44 opacity-20 rotate-12 animate-pulse" />
         </div>
       </section>
 

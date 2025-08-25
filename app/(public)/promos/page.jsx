@@ -82,7 +82,7 @@ export default function PromosPage() {
 
       {/* Coupons */}
       <section className="max-w-7xl mx-auto px-6 pt-12">
-        <div className="rounded-3xl border border-black/5 bg-white/80 backdrop-blur p-6 shadow-xl">
+        <div className="rounded-xl border border-black/5 bg-white/80 backdrop-blur p-6 shadow-xl">
           <div className="flex items-center justify-between flex-wrap gap-3">
             <h2 className="text-2xl md:text-3xl font-bold">
               Clip These Coupons
@@ -101,7 +101,7 @@ export default function PromosPage() {
 
       {/* Book CTA */}
       <section id="book" className="max-w-7xl mx-auto px-6 py-14">
-        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-black to-[var(--color-primary)] text-white p-6 md:p-8 shadow-xl">
+        <div className="relative overflow-hidden rounded-xl bg-gradient-to-r from-green-500 to-[var(--color-primary)] text-white p-6 md:p-8 shadow-xl">
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
             <div className="lg:col-span-2">
               <h2 className="text-3xl font-bold">Book & Lock Your Price</h2>
@@ -150,7 +150,7 @@ export default function PromosPage() {
               </div>
             </div>
           </div>
-          <GiCarWheel className="absolute -right-10 -top-14 h-44 w-44 opacity-20 rotate-12" />
+          <GiCarWheel className="absolute -right-10 -top-14 h-44 w-44 opacity-20 rotate-12 animate-spin-slow" />
         </div>
       </section>
 
@@ -160,7 +160,7 @@ export default function PromosPage() {
           initial={{ opacity: 0, scale: 0.98 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="rounded-3xl border border-black/5 bg-white/80 backdrop-blur p-6 shadow-xl"
+          className="rounded-xl border border-black/5 bg-white/80 backdrop-blur p-6 shadow-xl"
         >
           <h2 className="text-2xl md:text-3xl font-bold">
             Why customers love us
@@ -245,9 +245,9 @@ function PromoCard({
       initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
-      className="group relative overflow-hidden rounded-3xl border border-black/5 bg-white/80 backdrop-blur shadow-xl"
+      className="group relative overflow-hidden rounded-xl border border-black/5 bg-white/80 backdrop-blur shadow-xl"
     >
-      <div className="relative h-44 w-full">
+      <div className="relative h-48 w-full">
         <Image src={image} alt={title} fill className="object-cover" />
         {badgeText && (
           <span className="absolute left-3 top-3 inline-flex items-center gap-2 rounded-xl bg-white/85 backdrop-blur px-3 py-1 text-xs font-semibold shadow">
@@ -256,21 +256,21 @@ function PromoCard({
           </span>
         )}
       </div>
-      <div className="p-5">
+
+      <div className="p-3">
         <h3 className="text-lg font-semibold flex items-center gap-2">
           {icon && (
-            <span className="grid h-8 w-8 place-items-center rounded-lg bg-black/90 text-white">
+            <span className="grid h-8 w-8 place-items-center rounded-lg bg-red-500/20 text-red-500">
               {icon}
             </span>
           )}
-          {title}
-        </h3>
-        <div className="mt-1 text-2xl font-extrabold tracking-tight">
           {priceLabel}
           {currency && (
             <span className="text-sm ml-1 align-top">{currency}</span>
           )}
-        </div>
+        </h3>
+
+
         <ul className="mt-2 space-y-1 text-sm text-gray-700">
           {features.map((f) => (
             <li key={f} className="flex items-center gap-2">
@@ -278,14 +278,7 @@ function PromoCard({
             </li>
           ))}
         </ul>
-        <div className="mt-4">
-          <a
-            href={cta.href}
-            className="inline-flex items-center gap-2 rounded-xl bg-black text-white px-4 py-2"
-          >
-            {cta.label} <FiChevronRight />
-          </a>
-        </div>
+
       </div>
     </motion.article>
   );
@@ -373,7 +366,7 @@ function Stat({ n, l }) {
       initial={{ opacity: 0, y: 12 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className="rounded-2xl border border-black/5 bg-white px-4 py-5 text-center shadow-sm"
+      className="rounded-xl border border-black/5 bg-white px-4 py-5 text-center shadow-sm"
     >
       <div className="text-3xl font-extrabold tracking-tight">{n}</div>
       <div className="text-sm text-gray-600">{l}</div>

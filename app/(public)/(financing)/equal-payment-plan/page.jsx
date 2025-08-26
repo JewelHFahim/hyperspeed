@@ -15,12 +15,15 @@ import Link from "next/link";
 import HeroSection from "@/components/common/HeroSection";
 import Container from "@/components/layout/Container";
 import CustomUnderline from "@/components/common/CustomUnderline";
+import { IoCalendarOutline } from "react-icons/io5";
+
+import { FiCalendar } from "react-icons/fi";
 
 export default function EqualPaymentPlanPage() {
   return (
     <main className="min-h-screen bg-white text-black">
       <HeroSection
-        title=" Equal Payment Plan for Your Car"
+        title="Plan for Your Car"
         colorTitle="Services and Parts"
         description=" Keep your car running smoothly and your wallet happy with flexible financing options."
       />
@@ -114,16 +117,16 @@ export default function EqualPaymentPlanPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: idx * 0.2, duration: 0.6 }}
                   viewport={{ once: true }}
-                  className="bg-[#f8f8f8] p-6 rounded-lg shadow-lg hover:scale-105 transition-transform"
+                  className="bg-[#f8f8f8] border border-gray-300 p-6 rounded-lg shadow-lg hover:scale-105 transition-transform"
                 >
-                  <FaClipboardCheck
-                    size={40}
+                  <IoCalendarOutline
+                    size={30}
                     className="text-[var(--color-primary)] mx-auto mb-4"
                   />
-                  <h3 className="text-xl font-semibold text-black mb-2">
+                  <h3 className="text-xl font-semibold text-black mb-">
                     {plan.title}
                   </h3>
-                  <p className="text-gray-600">{plan.desc}</p>
+                  {/* <p className="text-gray-600">{plan.desc}</p> */}
                   <p className="text-gray-500 font-medium">{plan.fee}</p>
                 </motion.div>
               ))}

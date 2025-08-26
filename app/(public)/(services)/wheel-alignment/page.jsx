@@ -17,6 +17,7 @@ import {
 } from "react-icons/fi";
 import { PiSteeringWheel } from "react-icons/pi";
 import { GiCarWheel } from "react-icons/gi";
+import { MdOutlineBusAlert } from "react-icons/md";
 
 export default function WheelAlignmentPage() {
   const container = {
@@ -166,12 +167,14 @@ export default function WheelAlignmentPage() {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="rounded-xl border border-black/5 bg-white/80 backdrop-blur p-6 shadow-xl shadow-red-50 ring ring-red-100"
+            className="rounded-xl border border-black/5 bg-white/80 backdrop-blur shadow-xl overflow-hidden shadow-red-50 ring ring-red-100"
           >
-            <h3 className="flex items-center gap-2 text-xl font-semibold">
-              <FiAlertTriangle className="text-red-500" /> Problems
+            <h3 className="flex items-center gap-2 text-xl font-semibold bg-red-100 px-6 py-2">
+              <MdOutlineBusAlert className="text-red-500" /> 
+              Problems
             </h3>
-            <ul className="mt-4 space-y-3">
+
+            <ul className="mt-4 px-5 pb-5">
               {[
                 "Car pulls left or right",
                 "Crooked steering wheel",
@@ -180,7 +183,7 @@ export default function WheelAlignmentPage() {
                 "After hitting a pothole/curb",
                 "New suspension or lowering springs",
               ].map((p, i) => (
-                <li key={i} className="flex items-start gap-3">
+                <li key={i} className="flex items-start pl-1 py-2 gap-3 even:bg-red-50">
                   <span className="mt-1 grid h-6 w-6 place-items-center rounded-md bg-red-50 text-red-600">
                     <FiAlertTriangle />
                   </span>
@@ -195,12 +198,12 @@ export default function WheelAlignmentPage() {
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="rounded-xl border border-black/5 bg-white/80 backdrop-blur p-6 shadow-xl shadow-green-50 ring ring-green-100"
+            className="rounded-xl border border-black/5 bg-white/80 backdrop-blur shadow-xl overflow-hidden shadow-green-50 ring ring-green-100"
           >
-            <h3 className="flex items-center gap-2 text-xl font-semibold">
+            <h3 className="flex items-center gap-2 text-xl font-semibold bg-green-100 px-6 py-2">
               <FiTool className="text-green-500" /> Solutions
             </h3>
-            <ul className="mt-4 space-y-3">
+            <ul className="mt-4 px-5 pb-5">
               {[
                 {
                   t: "Front or 4‑wheel alignment",
@@ -227,12 +230,12 @@ export default function WheelAlignmentPage() {
                   d: "Specs for lifted/lowered or track setups.",
                 },
               ].map((s, i) => (
-                <li key={i} className="flex items-start gap-3">
+                <li key={i} className="flex items-start gap-3 even:bg-green-100 py-2">
                   <span className="mt-1 grid h-6 w-6 place-items-center rounded-md bg-green-500/10 text-green-500">
                     <FiCheckCircle />
                   </span>
                   <span>
-                    <span className="font-semibold">{s.t}:</span> {s.d}
+                    <span>{s.t}:</span> {s.d}
                   </span>
                 </li>
               ))}

@@ -49,29 +49,33 @@ function RimsPage() {
 
           <CustomUnderline className="my-6" />
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { title: "Alloy Rims", img: "/images/g2.webp" },
-              { title: "Chrome Rims", img: "/images/rim1.jpg" },
-              { title: "Matte Black", img: "/images/rim1.jpg" },
-              { title: "Performance", img: "/images/rim1.jpg" },
-              { title: "Luxury", img: "/images/rim1.jpg" },
-              { title: "Off-Road", img: "/images/rim1.jpg" },
+              { title: "Alloy Rims", img: "/images/w1.png" },
+              { title: "Chrome Rims", img: "/images/w3.png" },
+              { title: "Matte Black", img: "/images/w4.webp" },
+              { title: "Performance", img: "/images/w5.webp" },
+              { title: "Luxury", img: "/images/w6.webp" },
+              { title: "Off-Road", img: "/images/w7.png" },
+              { title: "Alloy Rims", img: "/images/w1.png" },
+              { title: "Chrome Rims", img: "/images/w3.png" },
             ].map((cat, idx) => (
               <motion.div
                 key={idx}
                 whileHover={{ scale: 1.05 }}
-                className="relative border rounded-xl overflow-hidden group cursor-pointer"
+                className="relative border border-gray-300 rounded-xl overflow-hidden group cursor-pointer p-4"
               >
                 <Image
-                  src="/images/g2.webp"
+                  src={cat.img}
                   alt={cat.title}
                   width={500}
                   height={300}
-                  className="object-cover w-full h-56 group-hover:scale-110 transition-transform duration-500"
+                  className="object-cover w-full  group-hover:scale-110 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-                  <h3 className="text-white text-xl font-bold">{cat.title}</h3>
+                <div className="absolute inset-0 bg-black/10 flex items-end pb-2 justify-center">
+                  <h3 className="text-white text-lg rounded-md bg-black/50 px-4 py-1">
+                    {cat.title}
+                  </h3>
                 </div>
               </motion.div>
             ))}
@@ -83,23 +87,30 @@ function RimsPage() {
       <section className="max-w-7xl mx-auto py-20 px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div>
           <h2 className="text-3xl font-bold mb-4">
-            Why Choose Our <span className="text-[var(--color-primary)]"> Rims?</span>
+            Why Choose Our{" "}
+            <span className="text-[var(--color-primary)]"> Rims?</span>
           </h2>
           <ul className="space-y-3 text-gray-700 leading-relaxed">
             <li className="flex items-center gap-2">
-              <GiCarWheel className="text-lg text-green-500"/>
+              <GiCarWheel className="text-lg text-green-500" />
               Engineered with top-grade alloys for maximum durability.
             </li>
-               <li className="flex items-center gap-2">
-              <GiCarWheel className="text-lg text-green-500"/>
-               Multiple finishes: matte, gloss, chrome, and custom paints.
+            <li className="flex items-center gap-2">
+              <GiCarWheel className="text-lg text-green-500" />
+              Multiple finishes: matte, gloss, chrome, and custom paints.
             </li>
-                <li className="flex items-center gap-2">
-              <GiCarWheel className="text-lg text-green-500"/> Precision-designed for performance and safety.</li>
-                <li className="flex items-center gap-2">
-              <GiCarWheel className="text-lg text-green-500"/> Lightweight construction for improved handling.</li>
-                <li className="flex items-center gap-2">
-              <GiCarWheel className="text-lg text-green-500"/> Easy care and resistant to weather conditions.</li>
+            <li className="flex items-center gap-2">
+              <GiCarWheel className="text-lg text-green-500" />{" "}
+              Precision-designed for performance and safety.
+            </li>
+            <li className="flex items-center gap-2">
+              <GiCarWheel className="text-lg text-green-500" /> Lightweight
+              construction for improved handling.
+            </li>
+            <li className="flex items-center gap-2">
+              <GiCarWheel className="text-lg text-green-500" /> Easy care and
+              resistant to weather conditions.
+            </li>
           </ul>
         </div>
         <motion.div

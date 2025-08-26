@@ -98,7 +98,7 @@ export default function HeroSection({
 
           <motion.h1
             {...fadeIn(0.12)}
-            className="mt-4 font-extrabold leading-[0.95] tracking-tight text-4xl sm:text-5xl md:text-6xl"
+            className="mt-4 font-extrabold leading-[0.95] tracking-tight text-xl sm:text-3xl md:text-5xl"
           >
             <span className="inline-block">{title}</span>{" "}
             {colorTitle && (

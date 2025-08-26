@@ -3,9 +3,6 @@ import HeroSlider from "@/components/home/HeroSlider";
 import PartsSelector from "@/components/home/PartsSelector";
 import CategorySection from "@/components/home/CategorySection";
 import FeaturedBrands from "@/components/home/FeaturedBrands";
-import NewsletterFooter from "@/components/home/NewsletterFooter"
-
-
 
 const Home = () => {
   return (

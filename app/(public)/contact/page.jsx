@@ -176,34 +176,6 @@ export default function ContactPage() {
                 />
               </div>
 
-              <div>
-                <label className="block text-sm font-medium mb-1" htmlFor="order">
-                  Order # (optional)
-                </label>
-                <input
-                  id="order"
-                  type="text"
-                  placeholder="AWC-12345"
-                  className="w-full border border-gray-300 px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] transition bg-white"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium mb-1" htmlFor="service">
-                  Service type
-                </label>
-                <select
-                  id="service"
-                  className="w-full border border-gray-300 px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] transition bg-white"
-                  defaultValue="fitment"
-                >
-                  <option value="fitment">Fitment advice</option>
-                  <option value="quote">Quote for wheels/tires</option>
-                  <option value="install">Install & alignment</option>
-                  <option value="warranty">Warranty/Returns</option>
-                  <option value="shipping">Shipping question</option>
-                </select>
-              </div>
 
               <div className="sm:col-span-2">
                 <label className="block text-sm font-medium mb-1" htmlFor="message">
@@ -217,45 +189,6 @@ export default function ContactPage() {
                 />
               </div>
 
-              <div className="sm:col-span-2">
-                <label className="block text-sm font-medium mb-1">Attach a photo (optional)</label>
-                <label
-                  htmlFor="file"
-                  className="flex items-center gap-3 cursor-pointer rounded-xl border border-dashed border-gray-300 px-4 py-3 hover:border-[var(--color-primary)]/60 transition"
-                >
-                  <FiUpload />
-                  <span className="text-sm text-gray-600">
-                    {fileName || "Upload wheel/tire photo or vehicle"}
-                  </span>
-                  <input
-                    id="file"
-                    type="file"
-                    className="hidden"
-                    onChange={(e) => setFileName(e.target.files?.[0]?.name || "")}
-                  />
-                </label>
-              </div>
-
-              <div className="sm:col-span-1">
-                <label className="block text-sm font-medium mb-1" htmlFor="preferred">
-                  Preferred contact
-                </label>
-                <select
-                  id="preferred"
-                  className="w-full border border-gray-300 px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] transition bg-white"
-                  defaultValue="email"
-                >
-                  <option value="email">Email</option>
-                  <option value="phone">Phone</option>
-                </select>
-              </div>
-
-              <div className="flex items-center gap-2 sm:col-span-1 mt-2">
-                <input id="subscribe" type="checkbox" className="h-4 w-4 rounded border-gray-300" />
-                <label htmlFor="subscribe" className="text-sm text-gray-700">
-                  Send me promos and tips
-                </label>
-              </div>
 
               <div className="flex items-start gap-2 sm:col-span-2">
                 <FiShield className="mt-0.5 text-gray-400" />
@@ -297,13 +230,13 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div className="p-6 space-y-5">
+            <div className="mt-5 p-6 space-y-10">
               <InfoRow icon={<FiMapPin />} title="Address" text="125 King St W, Toronto, ON M5H 1A1, Canada" />
               <InfoRow icon={<FiPhone />} title="Phone" text="+1 (437) 555-0146" />
               <InfoRow icon={<FiMail />} title="Email" text="support@autowheel.ca" />
               <InfoRow icon={<FiClock />} title="Hours" text="Mon–Sat: 9:00–18:00 • Sun: Closed" />
 
-              <div className="pt-2">
+              <div className="pt-10">
                 <p className="text-sm font-semibold mb-2">Follow us</p>
                 <div className="flex items-center gap-3">
                   <Social icon={<FiFacebook />} label="Facebook" />
@@ -314,28 +247,6 @@ export default function ContactPage() {
             </div>
           </div>
 
-          {/* Trust / Badges */}
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="grid grid-cols-2 sm:grid-cols-4 gap-3"
-          >
-            {[
-              { label: "Free Mount & Balance", icon: <GiCarWheel /> },
-              { label: "Fast Shipping", icon: <FiTruck /> },
-              { label: "2-Year Warranty", icon: <FiShield /> },
-              { label: "Expert Fitment", icon: <PiSteeringWheel /> },
-            ].map((b, idx) => (
-              <div
-                key={idx}
-                className="flex items-center gap-2 rounded-2xl bg-white/80 backdrop-blur border border-black/5 px-3 py-2 text-sm shadow-sm"
-              >
-                <span className="text-[var(--color-primary)]">{b.icon}</span>
-                <span className="font-medium">{b.label}</span>
-              </div>
-            ))}
-          </motion.div>
         </motion.div>
       </section>
 
@@ -354,40 +265,6 @@ export default function ContactPage() {
         <div className="pointer-events-none absolute inset-0 ring-1 ring-black/5 rounded-none" />
       </section>
 
-      {/* CTA Bar */}
-      <section className="max-w-7xl mx-auto px-6 py-12">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.98 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-black to-[var(--color-primary)] text-white p-6 md:p-8 shadow-xl"
-        >
-          <div className="relative z-10">
-            <h3 className="text-2xl md:text-3xl font-bold">
-              Not sure what fits your ride?
-            </h3>
-            <p className="mt-1 text-white/80">
-              Tell us your make, model, and year. Our specialists will recommend the perfect setup.
-            </p>
-            <div className="mt-4 flex flex-wrap items-center gap-3">
-              <a
-                href="#contact"
-                className="inline-flex items-center justify-center rounded-xl bg-white text-black px-5 py-3 font-semibold hover:bg-white/90"
-              >
-                Get fitment help
-              </a>
-              <a
-                href="tel:+14375550146"
-                className="inline-flex items-center justify-center rounded-xl bg-white/10 px-5 py-3 font-semibold text-white ring-1 ring-white/20 hover:bg-white/15"
-              >
-                <FiPhone className="mr-2" /> Call now
-              </a>
-            </div>
-          </div>
-
-          <GiCarWheel className="absolute -right-6 -top-10 h-40 w-40 opacity-20 rotate-12" />
-        </motion.div>
-      </section>
     </main>
   );
 }
@@ -415,7 +292,7 @@ function Social({ icon, label }) {
     <a
       href="#"
       aria-label={label}
-      className="group grid h-9 w-9 place-items-center rounded-xl border border-black/5 bg-white/70 backdrop-blur hover:bg-black hover:text-white transition"
+      className="group grid h-9 w-9 place-items-center rounded-xl border border-[var(--color-primary)]/40 bg-white/70 backdrop-blur hover:bg-black hover:text-white transition"
     >
       <span className="text-lg">{icon}</span>
     </a>

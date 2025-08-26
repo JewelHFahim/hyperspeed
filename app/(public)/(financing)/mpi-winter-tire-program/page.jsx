@@ -63,8 +63,8 @@ export default function MpiWinterTireProgramPage() {
       </section>
 
       {/* Benefits section */}
-      <section className="py-16 px-6 bg-blac k">
-        <div className="max-w-7xl mx-auto text-center mb-12">
+      <section className="py-16 px-6 bg-blac ">
+        <div className="max-w-7xl mx-auto text-center mb-8">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-black">
             Why Choose MPI Winter Tire Program?
           </h2>
@@ -98,13 +98,13 @@ export default function MpiWinterTireProgramPage() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.2, duration: 0.6 }}
               viewport={{ once: true }}
-              className="bg-gray-900 rounded-xl p-6 text-center hover:scale-105 transition-transform"
+              className="bg-gray-100 border border-gray-300 rounded-xl p-6 text-center hover:scale-105 ease-in-out transition-transform"
             >
               <div className="text-[var(--color-primary)] mb-4 flex justify-center">
                 {item.icon}
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-white">{item.title}</h3>
-              <p className="text-gray-400">{item.desc}</p>
+              <h3 className="text-xl font-semibold mb-2 text-black">{item.title}</h3>
+              <p className="text-gray-700">{item.desc}</p>
             </motion.div>
           ))}
         </div>
@@ -121,7 +121,7 @@ export default function MpiWinterTireProgramPage() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-4xl font-bold mb-6"
+            className="text-3xl md:text-4xl font-bold mb-6 text-white"
           >
             Check Your Eligibility
           </motion.h2>

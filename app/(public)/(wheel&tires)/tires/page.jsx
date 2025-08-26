@@ -6,52 +6,60 @@ import CustomUnderline from "@/components/common/CustomUnderline";
 import Breadcumb from "@/components/common/Breadcumb";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { GiCarWheel } from "react-icons/gi";
 
 export default function TiresPage() {
-
-
   return (
     <main className="min-h-screen bg-white text-black">
-
       {/* Breadcrumb */}
-      <Breadcumb title="Tires"/>
+      <Breadcumb title="Tires" />
 
       {/* Hero Section */}
-      <HeroSection title="Premium" colorTitle="Tires" description="Enhance comfort, style, and performance with premium accessories."/>
+      <HeroSection
+        title="Premium"
+        colorTitle="Tires"
+        description="Enhance comfort, style, and performance with premium accessories."
+      />
 
       {/* Tire Selector Widget */}
-      <PartsSelector title="Find the Right Tires for Your Vehicle" description=""/>
-
+      <PartsSelector
+        title="Find the Right Tires for Your Vehicle"
+        description=""
+      />
 
       {/* Categories Section */}
       <section className="bg-gray-50 py-16">
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-2xl font-bold text-center">Tire Categories</h2>
-           <CustomUnderline className="my-6" />
+          <CustomUnderline className="my-6" />
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { title: "Alloy Rims"},
-              { title: "Chrome Rims"},
-              { title: "Matte Black"},
-              { title: "Performance"},
-              { title: "Luxury"},
-              { title: "Off-Road"},
+              { title: "Alloy Rims" },
+              { title: "Chrome Rims" },
+              { title: "Matte Black" },
+              { title: "Performance" },
+              { title: "Luxury" },
+              { title: "Off-Road" },
+              { title: "Alloy Rims" },
+              { title: "Chrome Rims" },
             ].map((cat, idx) => (
               <motion.div
                 key={idx}
                 whileHover={{ scale: 1.05 }}
-                className="relative border rounded-xl overflow-hidden group cursor-pointer"
+                className="relative border border-gray-300 rounded-xl overflow-hidden group cursor-pointer"
               >
                 <Image
-                  src="/images/g2.webp"
+                  src="/images/tire.webp"
                   alt={cat.title}
                   width={500}
                   height={300}
-                  className="object-cover w-full h-56 group-hover:scale-110 transition-transform duration-500"
+                  className="object-cover w-full group-hover:scale-110 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-                  <h3 className="text-white text-xl font-bold">{cat.title}</h3>
+                <div className="absolute inset-0 bg-black/10 flex items-end pb-2 justify-center">
+                  <h3 className="text-white text-lg rounded-md bg-black/50 px-4 py-1">
+                    {cat.title}
+                  </h3>
                 </div>
               </motion.div>
             ))}
@@ -62,13 +70,35 @@ export default function TiresPage() {
       {/* Informational Section */}
       <section className="max-w-7xl mx-auto py-20 px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div>
-          <h2 className="text-3xl font-bold mb-4">Why <span className="text-[var(--color-primary)]"> Choose</span> Our Tires?</h2>
+          <h2 className="text-3xl font-bold mb-4">
+            Why <span className="text-[var(--color-primary)]"> Choose</span> Our
+            Tires?
+          </h2>
           <ul className="space-y-3 text-gray-700 leading-relaxed">
-            <li>✅ Enhanced safety and grip in all driving conditions.</li>
-            <li>✅ Optimized tread patterns for longer lifespan.</li>
-            <li>✅ Fuel-efficient designs to save on gas.</li>
-            <li>✅ Trusted brands with performance pedigree.</li>
-            <li>✅ Options for every season and terrain.</li>
+            <li className="flex items-center gap-2">
+              <GiCarWheel className="text-lg text-green-500" />
+              Enhanced safety and grip in all driving conditions.
+            </li>
+
+            <li className="flex items-center gap-2">
+              <GiCarWheel className="text-lg text-green-500" />
+              Optimized tread patterns for longer lifespan.
+            </li>
+
+            <li className="flex items-center gap-2">
+              <GiCarWheel className="text-lg text-green-500" />
+              Fuel-efficient designs to save on gas.
+            </li>
+
+            <li className="flex items-center gap-2">
+              <GiCarWheel className="text-lg text-green-500" />
+              Trusted brands with performance pedigree.
+            </li>
+
+            <li className="flex items-center gap-2">
+              <GiCarWheel className="text-lg text-green-500" />
+              Options for every season and terrain.
+            </li>
           </ul>
         </div>
         <motion.div
